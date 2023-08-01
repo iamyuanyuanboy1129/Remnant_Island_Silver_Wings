@@ -9,9 +9,13 @@ public class Player : MonoBehaviour
    public float moveSpeed = 5f;
     private float InputX;
     private bool isFlip = false;
+
     private Rigidbody2D rig;
     private Animator ani;
+
     public Transform groundpoint;
+    public LayerMask groundmask;
+    private bool isGrounded;
 
     public void Start()
     {
@@ -50,6 +54,8 @@ public class Player : MonoBehaviour
                 transform.Rotate(0.0f, 180.0f, 0.0f);    
             }
         }
+        //Debug.Log(Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask));
+        isGrounded = Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask);
     }
     public void Move(InputAction.CallbackContext context)
     {
@@ -57,7 +63,10 @@ public class Player : MonoBehaviour
     }
     public void Jump(InputAction.CallbackContext context)
     {
-        rig.velocity = new Vector2(rig.velocity.x,5);
+        if (isGrounded)
+        {
+            rig.velocity = new Vector2(rig.velocity.x, 5);
+        }
     }
     private void OnDrawGizmos()
     {
