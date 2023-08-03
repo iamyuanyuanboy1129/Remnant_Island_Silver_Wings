@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
         rig.velocity = new Vector2(moveSpeed * InputX, rig.velocity.y);
         // 判斷使用者是否有輸入移動控制 有的話讓角色進行跑步動畫的撥放
         ani.SetBool("isRun", Mathf.Abs(rig.velocity.x) > 0);
+        ani.SetBool("isGrounded", isGrounded);
+        ani.SetFloat("Y_Velocity", rig.velocity.y);
         // ani.SetBool("isRun",true);
         // if(Mathf.Abs(rig.velocity.x) > 0)
         // {
