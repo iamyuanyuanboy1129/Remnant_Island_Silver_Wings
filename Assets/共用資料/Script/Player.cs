@@ -6,16 +6,18 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-   public float moveSpeed = 5f;
+    public float moveSpeed = 5f;
+    public Transform groundpoint;
     private float InputX;
-    private bool isFlip = false;
 
     private Rigidbody2D rig;
     private Animator ani;
 
-    public Transform groundpoint;
+    private bool isFlip = false;
+    private bool isGrounded = false;
+    private bool canAttack;
+
     public LayerMask groundmask;
-    private bool isGrounded;
 
     public void Start()
     {
@@ -58,6 +60,7 @@ public class Player : MonoBehaviour
         }
         //Debug.Log(Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask));
         isGrounded = Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask);
+        canAttack = isGrounded;
     }
     public void Move(InputAction.CallbackContext context)
     {
@@ -70,6 +73,19 @@ public class Player : MonoBehaviour
             rig.velocity = new Vector2(rig.velocity.x, 5);
         }
     }
+    public void Attack(InputAction.CallbackContext context)
+    {
+        //檢查玩家是否可以攻擊
+        if (canAttack)
+        {
+            ani.SetBool("attack", true);
+        }
+    }
+    public void EndAttack()
+    {
+        ani.SetBool("attack", false);
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundpoint.position, .3f);
