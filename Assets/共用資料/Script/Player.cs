@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 
     private bool isFlip = false;
     private bool isGrounded = false;
-    private bool canAttack;
+    private bool canAttack = true;
 
     public LayerMask groundmask;
 
