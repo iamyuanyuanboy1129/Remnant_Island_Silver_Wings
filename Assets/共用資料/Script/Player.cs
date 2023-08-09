@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Transform groundpoint;
+    public Transform attackpoint;
+    public float attack_range = 1f;
     private float InputX;
 
     private Rigidbody2D rig;
@@ -89,5 +91,7 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(groundpoint.position, .3f);
+        Gizmos.DrawWireSphere(attackpoint.position, attack_range);
+
     }
 }
