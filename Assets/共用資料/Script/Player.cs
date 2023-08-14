@@ -1,97 +1,98 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 public class Player : MonoBehaviour
 {
+    #region 資料
+    [SerializeField, Range(0, 50), Header("移動速度")]
     public float moveSpeed = 5f;
-    public Transform groundpoint;
-    public Transform attackpoint;
-    public float attack_range = 1f;
-    private float InputX;
+    [SerializeField, Header("檢查地板尺寸")]
+    private Vector3 v3CheckGroundSize = Vector3.one;
+    [SerializeField, Header("檢查地板位移")]
+    private Vector3 v3CheckGroundOffset = Vector3.zero;
+    [SerializeField, Header("要偵測地板的圖層")]
+    private LayerMask layerCheckGround;
+    [SerializeField, Header("跳躍力道"), Range(0, 800)]
+    private float jumpPower = 500;
 
     private Rigidbody2D rig;
     private Animator ani;
+    private string parRun = "isRun";
+    private string parJump = "isJump";
+    #endregion
 
-    private bool isFlip = false;
-    private bool isGrounded = false;
-    private bool canAttack = true;
-
-    public LayerMask groundmask;
-
-    public void Start()
+    #region 事件
+    private void OnDrawGizmos()
     {
+        Gizmos.color = new Color(1, 0, 0.3f, 0.5f);
+        Gizmos.DrawCube(transform.position + v3CheckGroundOffset, v3CheckGroundSize);
+    }
+
+    private void Awake()
+    {
+        //print("<color=yellow>喚醒事件</color>")
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
     }
+
+    public void Start()
+    {
+        //print("<color=yellow>開始事件</color>")    
+
+    }
+
     public void Update()
     {
-        rig.velocity = new Vector2(moveSpeed * InputX, rig.velocity.y);
-        // 判斷使用者是否有輸入移動控制 有的話讓角色進行跑步動畫的撥放
-        ani.SetBool("isRun", Mathf.Abs(rig.velocity.x) > 0);
-        ani.SetBool("isGrounded", isGrounded);
+        //print("<color=yellow>更新事件</color>")    
+        Move();
+        //CheckGround();
+        Jump();
+        //下墜動作
         ani.SetFloat("Y_Velocity", rig.velocity.y);
-        // ani.SetBool("isRun",true);
-        // if(Mathf.Abs(rig.velocity.x) > 0)
-        // {
-        //     //玩家移動 isRun -> true
-        //     ani.SetBool("isRun",true);
-        // }
-        // else
-        // {
-        //     ani.SetBool("isRun",false);
-        // }
+    }
+    #endregion
 
-        if(!isFlip)
-        {
-            if(rig.velocity.x < 0)
-            {
-                isFlip = true;
-                transform.Rotate(0.0f, 180.0f, 0.0f);    
-            }
-        }
-        else
-        {
-            if(rig.velocity.x > 0)
-            {
-                isFlip = false;
-                transform.Rotate(0.0f, 180.0f, 0.0f);    
-            }
-        }
-        //Debug.Log(Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask));
-        isGrounded = Physics2D.OverlapCircle(groundpoint.position, .2f, groundmask);
-        canAttack = isGrounded;
-    }
-    public void Move(InputAction.CallbackContext context)
+    #region 方法
+    /// <summary>
+    /// 移動與翻面
+    /// </summary>
+    public void Move()
     {
-        InputX = context.ReadValue<Vector2>().x;
-    }
-    public void Jump(InputAction.CallbackContext context)
-    {
-        if (isGrounded)
+        float h = Input.GetAxis("Horizontal");
+        rig.velocity = new Vector2(h * moveSpeed, rig.velocity.y);
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        if (h < 0)
         {
-            rig.velocity = new Vector2(rig.velocity.x, 5);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
-    }
-    public void Attack(InputAction.CallbackContext context)
-    {
-        //檢查玩家是否可以攻擊
-        if (canAttack)
+        //else if (Input.GetKey(KeyCode.RightArrow))
+        else if (h > 0)
         {
-            ani.SetBool("attack", true);
+            transform.eulerAngles = Vector3.zero;
+        }
+        ani.SetBool(parRun, h != 0);
+    }
+    /// <summary>
+    /// 判斷是否在地面，並且按空白鍵跳躍
+    /// </summary>
+    public void Jump()
+    {
+        if (CheckGround() && Input.GetKeyDown(KeyCode.Space))
+        {
+            rig.AddForce(new Vector2(0, jumpPower));
         }
     }
-    public void EndAttack()
+    /// <summary>
+    /// 檢查角色是否在地板
+    /// </summary>
+    /// <returns>是否在地板上</returns>
+    private bool CheckGround()
     {
-        ani.SetBool("attack", false);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(groundpoint.position, .3f);
-        Gizmos.DrawWireSphere(attackpoint.position, attack_range);
-
-    }
+        Collider2D hit = Physics2D.OverlapBox(transform.position + v3CheckGroundOffset, v3CheckGroundSize, 0, layerCheckGround);
+        ani.SetBool(parJump, !hit);
+        return hit;
+    } 
+    #endregion
 }
