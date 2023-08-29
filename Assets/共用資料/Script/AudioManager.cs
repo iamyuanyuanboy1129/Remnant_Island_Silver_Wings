@@ -1,16 +1,17 @@
-using System;
+ï»¿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Án­µ¨Ó·½")]
+    [Header("è²éŸ³ä¾†æº")]
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
 
-    [Header("Án­µ¤ù¬q")]
+    [Header("è²éŸ³ç‰‡æ®µ")]
     public AudioClip background;
+    public AudioClip buttonClick;
 
     private void Start()
     {
