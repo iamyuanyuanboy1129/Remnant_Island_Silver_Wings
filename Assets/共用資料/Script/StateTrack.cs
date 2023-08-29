@@ -6,7 +6,7 @@ namespace TwoD
     public class StateTrack : State
     {
         [SerializeField, Header("追蹤速度"), Range(0, 5)]
-        private float speed = 1.5f;
+        private float speed = 2f;
         [SerializeField, Header("遊走狀態")]
         private StateWander stateWander;
         [Header("攻擊區域")]
@@ -40,6 +40,7 @@ namespace TwoD
                     ani.SetBool(parWalk, true);
                     ani.speed = 5;
                     rig.velocity = new Vector2(speed * stateWander.direction, rig.velocity.y);
+
 
                     return this;
                 }
