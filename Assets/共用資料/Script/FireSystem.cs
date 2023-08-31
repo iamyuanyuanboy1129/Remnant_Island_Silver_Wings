@@ -19,50 +19,34 @@ namespace TwoD
         private float powerBullet = 1000;
 
         [Header("普攻&神器傷害值")]
-        [SerializeField] private float damageNomalFire = 20.0f;
-        [SerializeField] private float damageHolyFire = 80.0f;
-        [Header("主角攻擊判斷區域")]
-        [SerializeField]
-        private Vector3 idleAttackSize_one = Vector3.one;
-        [SerializeField]
-        private Vector3 idleAttackOffset_one;
-        [SerializeField]
-        private Vector3 idleAttackSize_two = Vector3.one;
-        [SerializeField]
-        private Vector3 idleAttackOffset_two;
+        [SerializeField] public float damageNomalFire = 20.0f;
+        [SerializeField] public float damageHolyFire = 80.0f;
 
-        [SerializeField, Header("送出攻擊1檢測的時間點"), Range(0, 5)]
-        private float idleAttackTimeCheck_one = 0.2f;
-        [SerializeField, Header("送出攻擊2檢測的時間點"), Range(0, 5)]
-        private float idleAttackTimeCheck_two = 0.6f;
-        [SerializeField, Header("攻擊結束的時間點"), Range(0, 5)]
-        private float idleAttackTimeEnd = 0.8f;
-        [field: SerializeField, Header("攻擊圖層")]
-        protected LayerMask layerTarget { get; private set; }
+        [SerializeField, Header("第一段攻擊區域")]
+        private Transform Attack_area_one;
+        [SerializeField, Header("第二段攻擊區域")]
+        private Transform Attack_area_two;
 
         private Animator ani;
+        private PolygonCollider2D pcollider;
+
         private string parHolyFire = "觸發衝擊波";
         private string parNomalFire = "觸發普通攻擊";
-        //private float timer;
+        public float time_one = 1.5f;
+        public float time_two = 2.5f;
+        public float startTime;
 
-
-        private void OnDrawGizmos()
-        {
-            Gizmos.color = new Color(1, 0.7f, 0.9f, 0.5f);
-            Gizmos.DrawCube(transform.position + transform.TransformDirection(idleAttackOffset_one), idleAttackSize_one);
-            Gizmos.color = new Color(1, 0.7f, 0.1f, 0.5f);
-            Gizmos.DrawCube(transform.position + transform.TransformDirection(idleAttackOffset_two), idleAttackSize_two);
-        }
 
         private void Awake()
         {
             ani = GetComponent<Animator>();
+            pcollider = GameObject.FindGameObjectWithTag("Attack_area").GetComponent<PolygonCollider2D>();
         }
 
         private void Update()
         {
             HolyFire();
-            NormalFire();
+            NormalAttack();
         }
         /// <summary>
         /// 衝擊波攻擊
@@ -77,63 +61,28 @@ namespace TwoD
                 tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
             }
         }
-        /// <summary>
-        /// 普通攻擊
-        /// </summary>
-        private void NormalFire()
+
+        private void NormalAttack()
         {
             if (Input.GetKeyDown(KeyCode.V))
             {
-
-                //if (timer == 0)
-                //{
-                    ani.SetTrigger(parNomalFire);
-                //}
-                /*
-                else
-                {
-                    if (timer == idleAttackTimeCheck_one || timer == idleAttackTimeCheck_two)
-                    {
-                        if (AttackRange_one() || AttackRange_two())
-                        {
-                            
-                            print("<color=#69f>擊中</color>");
-
-                        }
-                    }
-                    else if (timer >= idleAttackTimeEnd)
-                    {
-
-                        timer = 0;
-
-                    }
-                }
-                */
-
-                //timer += Time.deltaTime;
-
-
+                pcollider.enabled = true;
+                ani.SetTrigger(parNomalFire);
+                StartCoroutine(StartAttack());
             }
         }
-        /// <summary>
-        /// 攻擊目標碰撞檢測
-        /// </summary>
-        /// <returns>是否有目標進入範圍</returns>
-        /*
-        public bool AttackRange_one()
-        {
-            print("123");
 
-            Collider2D hit_one = Physics2D.OverlapBox(transform.position + transform.TransformDirection(idleAttackOffset_one), idleAttackSize_one, 0, layerTarget);
-            return hit_one;
-        }
-        public bool AttackRange_two()
+        IEnumerator StartAttack()
         {
-            print("456");
-
-            Collider2D hit_two = Physics2D.OverlapBox(transform.position + transform.TransformDirection(idleAttackOffset_two), idleAttackSize_two, 0, layerTarget);
-            return hit_two;
+            yield return new WaitForSeconds(startTime);
+            pcollider.enabled = true;
+            StartCoroutine(disableHitBox());
         }
-        */
+
+        IEnumerator disableHitBox()
+        {
+            yield return new WaitForSeconds(time_one);
+            pcollider.enabled = false;
+        }
     }
 }
