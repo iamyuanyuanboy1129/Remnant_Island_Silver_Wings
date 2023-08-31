@@ -192,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27930305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.762, y: -0.014, z: 0}
+  m_LocalPosition: {x: 1.04, y: -0.024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -317,7 +317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -175}
+  m_AnchoredPosition: {x: 0, y: -259}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91255490
@@ -13262,8 +13262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528189270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-
-  m_LocalPosition: {x: -11.318682, y: -0.19000101, z: -10}
+  m_LocalPosition: {x: -11.33569, y: -0.19000101, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14480,6 +14479,18 @@ MonoBehaviour:
   prefabBullet: {fileID: 5623226632300950705, guid: 6d99c411fc23b064d9f236ead3819a21, type: 3}
   pointBullet: {fileID: 27930306}
   powerBullet: 1000
+  damageNomalFire: 20
+  damageHolyFire: 80
+  idleAttackSize_one: {x: 1, y: 1.5, z: 1}
+  idleAttackOffset_one: {x: 0.65, y: 0, z: 0}
+  idleAttackSize_two: {x: 1.2, y: 1.5, z: 1}
+  idleAttackOffset_two: {x: 0.75, y: -0.1, z: 0}
+  idleAttackTimeCheck_one: 0.2
+  idleAttackTimeCheck_two: 0.6
+  idleAttackTimeEnd: 1.2
+  <layerTarget>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &765206646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15220,7 +15231,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.1399, y: -174.0488}
+  m_AnchoredPosition: {x: 15.1399, y: -258.0488}
   m_SizeDelta: {x: 100.2361, y: 64.5684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010304538
@@ -21554,7 +21565,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 86
     y: 151
-    width: 98
+    width: 95.56961
     height: 40
   tint: {r: 0.2805456, g: 1, b: 0, a: 1}
   useCustomTint: 1
@@ -21582,21 +21593,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 0, y: 0}
+  scrollPos: {x: 85.59347, y: 17.886007}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 610
-  zoom: 1
+  zoom: 0.7900002
   scrollViewRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  selectedBlocks:
-  - {fileID: 1375015572}
-  selectedCommands:
-  - {fileID: 1375015575}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -22452,7 +22461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.7, y: -174.9}
+  m_AnchoredPosition: {x: 18.7, y: -258.9}
   m_SizeDelta: {x: 177.031, y: -2.8602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516790068
@@ -22674,7 +22683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.6459, y: -174.3486}
+  m_AnchoredPosition: {x: 15.6459, y: -258.3486}
   m_SizeDelta: {x: 112.5724, y: 109.1892}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610662474
