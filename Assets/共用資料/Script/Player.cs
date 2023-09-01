@@ -21,9 +21,26 @@ public class Player : MonoBehaviour
     private Animator ani;
     private string parRun = "isRun";
     private string parJump = "isJump";
+
+    public int health = 100;
+    public int gold = 0;
+
+    public Quest quest;
     #endregion
 
     #region 事件
+    public void GoBattle()
+    {
+        if (quest.isActive)
+        {
+            quest.goal.EnemyKilled();
+            if (quest.goal.IsReached())
+            {
+                gold += quest.goldReward;
+                quest.Complete();
+            }
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.color = new Color(1, 0, 0.3f, 0.5f);
