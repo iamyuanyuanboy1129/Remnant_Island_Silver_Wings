@@ -1,15 +1,15 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
 
 namespace TwoD
 {
     public class HealthSystem : MonoBehaviour
     {
-        [Header("°ò¥»Äİ©Ê")]
+        [Header("åŸºæœ¬å±¬æ€§")]
         [SerializeField] public float maxHealth;
         [SerializeField] public float currentHealth;
 
-        [Header("¨ü¶ËµL¼Ä")]
+        [Header("å—å‚·ç„¡æ•µ")]
         public float invulnerableDuration;
         private float invulnerableCounter;
         public bool invulnerable;
@@ -46,12 +46,12 @@ namespace TwoD
             else
             {
                 currentHealth = 0;
-                //Ä²µo¦º¤`
+                //è§¸ç™¼æ­»äº¡
             }
         }
 
         /// <summary>
-        /// Ä²µo¨ü¶ËµL¼Ä
+        /// è§¸ç™¼å—å‚·ç„¡æ•µ
         /// </summary>
         private void TriggerInvulnerable()
         {
