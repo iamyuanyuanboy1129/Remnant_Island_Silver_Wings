@@ -1,18 +1,24 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace TwoD
 {
     public class HealthSystem : MonoBehaviour
     {
         [Header("基本屬性")]
-        [SerializeField] public float maxHealth;
-        [SerializeField] public float currentHealth;
+        [SerializeField, Header("最大血量")] public float maxHealth;
+        [SerializeField, Header("當前血量")] public float currentHealth;
 
         [Header("受傷無敵")]
         public float invulnerableDuration;
         private float invulnerableCounter;
         public bool invulnerable;
+
+        public UnityEvent<Transform> OnTakeDamage;
+        public UnityEvent OnDie;
+
 
         private void Start()
         {
@@ -42,11 +48,14 @@ namespace TwoD
             {
                 currentHealth -= attacker.damage;
                 TriggerInvulnerable();
+                //執行受傷
+                OnTakeDamage?.Invoke(attacker.transform);
             }
             else
             {
                 currentHealth = 0;
                 //觸發死亡
+                OnDie?.Invoke();
             }
         }
 
@@ -60,6 +69,7 @@ namespace TwoD
                 invulnerable = true;
                 invulnerableCounter = invulnerableDuration;
             }
-        }    
+        }
+
     }
 }

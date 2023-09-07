@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +26,13 @@ public class Player : MonoBehaviour
     public int gold = 0;
 
     public Quest quest;
+
+    [SerializeField, Header("受傷反彈力"), Range(0, 10)]
+    public float hurtForce;
+    public bool isHurt;
+
+    public bool isDead;
+
     #endregion
 
     #region 事件
@@ -62,12 +69,16 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
-        //print("<color=yellow>更新事件</color>")    
-        Move();
+        //print("<color=yellow>更新事件</color>")
+        if (!isHurt)
+        {
+            Move();
+        }
         //CheckGround();
         Jump();
         //下墜動作
         ani.SetFloat("Y_Velocity", rig.velocity.y);
+
     }
     #endregion
 
@@ -110,6 +121,32 @@ public class Player : MonoBehaviour
         Collider2D hit = Physics2D.OverlapBox(transform.position + v3CheckGroundOffset, v3CheckGroundSize, 0, layerCheckGround);
         ani.SetBool(parJump, !hit);
         return hit;
-    } 
+    }
+    /// <summary>
+    /// 人物受傷
+    /// </summary>
+    public void PlayHurt()
+    {
+        ani.SetTrigger("hurt");
+
+    }
+
+    public void GetHurt(Transform attacker)
+    {
+        isHurt = true;
+        rig.velocity = Vector2.zero;
+        Vector2 dir = new Vector2((transform.position.x - attacker.position.x), 0).normalized;
+
+        rig.AddForce(dir * hurtForce, ForceMode2D.Impulse);
+        
+    }
+
+    public void PlayDead()
+    {
+        //isDead = true;
+        ani.SetBool("isDead", true);
+        GameObject.Find("Player_Idle").GetComponent<Player>().enabled = false;
+    }
+
     #endregion
 }
