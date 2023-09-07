@@ -951,8 +951,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 223851974}
-  selectedCommands:
-  - {fileID: 223851981}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -14161,11 +14160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb003bd0c103284c9372d81331317f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parNomalFire: "\u89F8\u767C\u666E\u901A\u653B\u64CA"
-  time: 0
-  startTime: 0
-  ani: {fileID: 0}
-  pcollider: {fileID: 0}
 --- !u!1 &705906821
 GameObject:
   m_ObjectHideFlags: 0
@@ -14264,11 +14258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e152e2f81812a4785e7e52c0a426e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parNomalFire: "\u89F8\u767C\u666E\u901A\u653B\u64CA"
-  time: 0
-  startTime: 0
-  ani: {fileID: 0}
-  pcollider: {fileID: 0}
 --- !u!4 &722885348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7794912045165657991, guid: 43c36226345b3e542b912ffd7dad848f, type: 3}
@@ -14672,6 +14661,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   jumpPower: 300
+  health: 100
+  gold: 0
+  quest:
+    isActive: 0
+    title: 
+    description: 
+    goldReward: 0
+    goal:
+      goalType: 0
+      requiredAmount: 0
+      currentAmount: 0
+  hurtForce: 3
+  isHurt: 0
+  isDead: 0
 --- !u!114 &758890885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14699,10 +14702,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacaa0f08728b794580a4871ba442eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 6
   currentHealth: 0
   invulnerableDuration: 2
   invulnerable: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758890884}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: PlayHurt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 758890884}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: GetHurt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758890884}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: PlayDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &765206646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22657,6 +22702,24 @@ MonoBehaviour:
   currentHealth: 0
   invulnerableDuration: 2
   invulnerable: 0
+  OnTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1485669387}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1485669388
 MonoBehaviour:
   m_ObjectHideFlags: 0
