@@ -1,4 +1,4 @@
-using Fungus;
+ï»¿using Fungus;
 using System.Collections;
 using System.Linq.Expressions;
 using UnityEngine;
@@ -7,34 +7,37 @@ using UnityEngine.Timeline;
 namespace TwoD
 {
     /// <summary>
-    /// ¯«¾¹§ğÀ»¨t²Î
+    /// ç¥å™¨æ”»æ“Šç³»çµ±
     /// </summary>
     public class FireSystem : MonoBehaviour
     {
-        [SerializeField, Header("½ÄÀ»ªi¹w»sª«")]
+        [SerializeField, Header("è¡æ“Šæ³¢é è£½ç‰©")]
         private GameObject prefabBullet;
-        [SerializeField, Header("¥Í¦¨½ÄÀ»ªi¦ì¸m")]
+        [SerializeField, Header("ç”Ÿæˆè¡æ“Šæ³¢ä½ç½®")]
         private Transform pointBullet;
-        [SerializeField, Header("µo®g½ÄÀ»ªi¤O¹D"), Range(0, 2500)]
+        [SerializeField, Header("ç™¼å°„è¡æ“Šæ³¢åŠ›é“"), Range(0, 2500)]
         private float powerBullet = 1000;
 
         private Animator ani;
 
-        private string parHolyFire = "Ä²µo½ÄÀ»ªi";
+        private string parHolyFire = "è§¸ç™¼è¡æ“Šæ³¢";
+        private string parNormalFire = "è§¸ç™¼æ™®é€šæ”»æ“Š";
+        public bool isAttack = false;
 
         private void Awake()
         {
             ani = GetComponent<Animator>();
-       }
+        }
 
         private void Update()
         {
             HolyFire();
+            NormalFire();
         }
         /// <summary>
-        /// ½ÄÀ»ªi§ğÀ»
+        /// è¡æ“Šæ³¢æ”»æ“Š
         /// </summary>
-        private void HolyFire()
+        public void HolyFire()
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
@@ -43,6 +46,18 @@ namespace TwoD
                 GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
                 tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
 
+            }
+        }
+        /// <summary>
+        /// æ™®é€šäºŒæ®µæ”»æ“Š
+        /// </summary>
+        public void NormalFire()
+        {
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                isAttack = true;
+                ani.SetBool("isAttack", true);
+                ani.SetTrigger(parNormalFire);
             }
         }
     }

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 223851973}
+  selectedFlowchart: {fileID: 1375015573}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -14075,12 +14075,12 @@ GameObject:
   - component: {fileID: 703658703}
   - component: {fileID: 703658704}
   m_Layer: 7
-  m_Name: Attack_area_one
+  m_Name: Attack_one
   m_TagString: Attack_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &703658701
 Transform:
   m_ObjectHideFlags: 0
@@ -14088,12 +14088,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703658700}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 758890881}
+  m_Father: {fileID: 948964529}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &703658703
@@ -14103,7 +14103,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703658700}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -14121,11 +14121,11 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14157,9 +14157,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 703658700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb003bd0c103284c9372d81331317f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cada249f56b31bd479ba64e11397b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  attackRange: 0
+  attackRate: 0
 --- !u!1 &705906821
 GameObject:
   m_ObjectHideFlags: 0
@@ -14172,12 +14175,12 @@ GameObject:
   - component: {fileID: 705906823}
   - component: {fileID: 705906824}
   m_Layer: 7
-  m_Name: Attack_area_two
+  m_Name: Attack_two
   m_TagString: Attack_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &705906822
 Transform:
   m_ObjectHideFlags: 0
@@ -14185,12 +14188,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705906821}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 758890881}
+  m_Father: {fileID: 948964529}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &705906823
@@ -14200,7 +14203,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705906821}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -14218,11 +14221,11 @@ PolygonCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 256
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -14241,8 +14244,8 @@ PolygonCollider2D:
       - {x: 0.83984816, y: 0.20505431}
       - {x: 0.8304407, y: 0.3896523}
       - {x: 0.68906164, y: 0.33808136}
-      - {x: 0.35938793, y: 0.0054948926}
-      - {x: 0.38059473, y: -0.55367297}
+      - {x: 0.3499707, y: 0.20952682}
+      - {x: 0.18911855, y: -0.60389614}
       - {x: 0.70341325, y: -0.375414}
       - {x: 0.83706695, y: -0.1511625}
   m_UseDelaunayMesh: 0
@@ -14255,9 +14258,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 705906821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6e152e2f81812a4785e7e52c0a426e2, type: 3}
+  m_Script: {fileID: 11500000, guid: cada249f56b31bd479ba64e11397b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 20
+  attackRange: 0
+  attackRate: 0
 --- !u!4 &722885348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7794912045165657991, guid: 43c36226345b3e542b912ffd7dad848f, type: 3}
@@ -14575,8 +14581,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 27930306}
-  - {fileID: 703658701}
-  - {fileID: 705906822}
+  - {fileID: 948964529}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14675,6 +14680,7 @@ MonoBehaviour:
   hurtForce: 3
   isHurt: 0
   isDead: 0
+  isAttack: 0
 --- !u!114 &758890885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14690,6 +14696,7 @@ MonoBehaviour:
   prefabBullet: {fileID: 5623226632300950705, guid: 6d99c411fc23b064d9f236ead3819a21, type: 3}
   pointBullet: {fileID: 27930306}
   powerBullet: 1000
+  isAttack: 0
 --- !u!114 &758890886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14702,7 +14709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eacaa0f08728b794580a4871ba442eae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 100
   currentHealth: 0
   invulnerableDuration: 2
   invulnerable: 0
@@ -15306,6 +15313,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &948964528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 948964529}
+  m_Layer: 7
+  m_Name: Attack_area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &948964529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948964528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 703658701}
+  - {fileID: 705906822}
+  m_Father: {fileID: 758890881}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &955243293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21748,7 +21788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "\u63A5\u4E0B\u4F86\u8ACB\u8A66\u8457\u4F7F\u7528\u653B\u64CA\u9375\"Z\"\uFF0C\u653B\u64CA\u524D\u65B9\u6575\u4EBA\u3002"
+  storyText: "\u63A5\u4E0B\u4F86\u8ACB\u8A66\u8457\u4F7F\u7528\u653B\u64CA\u9375\"V\"\uFF0C\u653B\u64CA\u524D\u65B9\u6575\u4EBA\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -21820,9 +21860,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 86
+    x: 88
     y: 151
-    width: 95.56961
+    width: 98
     height: 40
   tint: {r: 0.2805456, g: 1, b: 0, a: 1}
   useCustomTint: 1
@@ -21850,18 +21890,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 85.59347, y: 17.886007}
+  scrollPos: {x: 48.972054, y: -19.899529}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 610
-  zoom: 0.7900002
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 1375015572}
   selectedCommands: []
   variables: []
   description: 
@@ -22700,7 +22741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  invulnerableDuration: 2
+  invulnerableDuration: 1
   invulnerable: 0
   OnTakeDamage:
     m_PersistentCalls:
@@ -22751,7 +22792,7 @@ BoxCollider2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 256
-  m_LayerOverridePriority: 0
+  m_LayerOverridePriority: 10
   m_ForceSendLayers:
     serializedVersion: 2
     m_Bits: 4294967295
