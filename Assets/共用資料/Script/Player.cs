@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TwoD;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,8 +31,9 @@ public class Player : MonoBehaviour
     [SerializeField, Header("受傷反彈力"), Range(0, 10)]
     public float hurtForce;
     public bool isHurt;
-
     public bool isDead;
+
+    public bool isAttack;
 
     #endregion
 
@@ -59,8 +61,9 @@ public class Player : MonoBehaviour
         //print("<color=yellow>喚醒事件</color>")
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
-    }
 
+    }
+    
     public void Start()
     {
         //print("<color=yellow>開始事件</color>")    
@@ -70,7 +73,7 @@ public class Player : MonoBehaviour
     public void Update()
     {
         //print("<color=yellow>更新事件</color>")
-        if (!isHurt)
+        if (!isHurt && !isAttack)
         {
             Move();
         }
@@ -130,7 +133,6 @@ public class Player : MonoBehaviour
         ani.SetTrigger("hurt");
 
     }
-
     public void GetHurt(Transform attacker)
     {
         isHurt = true;
@@ -140,10 +142,11 @@ public class Player : MonoBehaviour
         rig.AddForce(dir * hurtForce, ForceMode2D.Impulse);
         
     }
-
+    /// <summary>
+    /// 人物死亡
+    /// </summary>
     public void PlayDead()
     {
-        //isDead = true;
         ani.SetBool("isDead", true);
         GameObject.Find("Player_Idle").GetComponent<Player>().enabled = false;
     }
