@@ -1262,7 +1262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -330, y: -370}
+  m_AnchoredPosition: {x: -330, y: -360}
   m_SizeDelta: {x: 300, y: 200}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &594955878
@@ -25698,7 +25698,7 @@ GameObject:
   - component: {fileID: 760321291}
   - component: {fileID: 760321290}
   m_Layer: 5
-  m_Name: "\u5B8C\u6210"
+  m_Name: "\u63A5\u53D7\u4EFB\u52D9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25779,6 +25779,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082412971}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 594955876}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &760321291
 MonoBehaviour:
@@ -95792,6 +95816,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2082412971}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1376505277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96402,16 +96438,10 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 5
       currentAmount: 0
-  goal:
-    goalType: 0
-    requiredAmount: 0
-    currentAmount: 0
   player: {fileID: 2012006634}
-  questWindow: {fileID: 2082412971}
   titleText: {fileID: 1448769059}
   descriptionText: {fileID: 273117085}
   goldText: {fileID: 610025700}
-  guidanceWindow: {fileID: 594955876}
   guideTitleText: {fileID: 497822766}
   guideDescriptionText: {fileID: 1265166783}
 --- !u!1 &1672168723
@@ -96648,6 +96678,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2082412971}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1702785947
 MonoBehaviour:
@@ -97835,13 +97877,6 @@ MonoBehaviour:
   prefabBullet: {fileID: 5623226632300950705, guid: 6d99c411fc23b064d9f236ead3819a21, type: 3}
   pointBullet: {fileID: 1146586649}
   powerBullet: 1000
-  damageNomalFire: 20
-  damageHolyFire: 80
-  Attack_area_one: {fileID: 0}
-  Attack_area_two: {fileID: 0}
-  time_one: 1.5
-  time_two: 2.5
-  startTime: 0
 --- !u!114 &2012006634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97872,6 +97907,9 @@ MonoBehaviour:
       goalType: 0
       requiredAmount: 5
       currentAmount: 0
+  hurtForce: 0
+  isHurt: 0
+  isDead: 0
 --- !u!70 &2012006635
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
