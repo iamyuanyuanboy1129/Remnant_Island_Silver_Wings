@@ -13111,7 +13111,7 @@ MonoBehaviour:
   m_Follow: {fileID: 758890881}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 6
+    OrthographicSize: 4.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -13237,7 +13237,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -13261,7 +13261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528189270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.333334, y: -0.19000101, z: -10}
+  m_LocalPosition: {x: -12.74, y: -0.19000006, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15114,7 +15114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cada249f56b31bd479ba64e11397b3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 30
   attackRange: 0
   attackRate: 0
 --- !u!61 &868523664
@@ -22696,7 +22696,7 @@ MonoBehaviour:
   <layerTarget>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
-  speed: 1.5
+  speed: 3
   stateWander: {fileID: 1485669382}
   attackSize: {x: 1.35, y: 1.5, z: 1}
   attackOffset: {x: 0.66, y: 0, z: 0}
@@ -22840,13 +22840,13 @@ MonoBehaviour:
   OnTakeDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1485669387}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1485669384}
+        m_TargetAssemblyTypeName: TwoD.StateManager, Assembly-CSharp
+        m_MethodName: EnemyHurt
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22854,7 +22854,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1485669384}
+        m_TargetAssemblyTypeName: TwoD.StateManager, Assembly-CSharp
+        m_MethodName: EnemyDead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1485669388
 MonoBehaviour:
   m_ObjectHideFlags: 0

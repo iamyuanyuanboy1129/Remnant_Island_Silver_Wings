@@ -10,6 +10,11 @@ namespace TwoD
         [SerializeField, Header("預設狀態")]
         private State stateDefault;
 
+        private Animator ani;
+        private void Awake()
+        {
+            ani = GetComponent<Animator>();
+        }
         private void Update()
         {
             RunStateMachine();
@@ -23,6 +28,16 @@ namespace TwoD
             {
                 stateDefault = nextState;
             }
-        }    
+        }
+        public void EnemyHurt()
+        {
+            ani.SetTrigger("觸發受傷");
+        }
+        public void EnemyDead()
+        {
+            ani.SetBool("開關死亡", true);
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.Find("Enemy_Idle").GetComponent<StateManager>().enabled = false;
+        }
     }
 }

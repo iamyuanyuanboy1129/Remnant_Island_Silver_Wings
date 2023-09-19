@@ -38,7 +38,7 @@ namespace TwoD
                 if (!AttackTarget())
                 {
                     ani.SetBool(parWalk, true);
-                    ani.speed = 5;
+                    ani.speed = 3;
                     rig.velocity = new Vector2(speed * stateWander.direction, rig.velocity.y);
 
 
