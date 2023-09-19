@@ -19,11 +19,12 @@ namespace TwoD
         public UnityEvent<Transform> OnTakeDamage;
         public UnityEvent OnDie;
 
+        private Rigidbody2D rig;
 
         private void Start()
         {
             currentHealth = maxHealth;
-
+            rig = GetComponent<Rigidbody2D>();
         }
 
         private void Update()
@@ -54,6 +55,7 @@ namespace TwoD
             else
             {
                 currentHealth = 0;
+                rig.velocity = Vector3.zero;
                 //觸發死亡
                 OnDie?.Invoke();
             }
