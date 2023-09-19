@@ -57,6 +57,7 @@ namespace TwoD
             {
                 isAttack = true;
                 ani.SetBool("isAttack", true);
+                this.GetComponent<Player>().isAttack = isAttack;
                 ani.SetTrigger(parNormalFire);
             }
         }

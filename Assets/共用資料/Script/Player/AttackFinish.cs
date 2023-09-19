@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TwoD;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class AttackFinish : StateMachineBehaviour
@@ -20,7 +21,7 @@ public class AttackFinish : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<FireSystem>().isAttack = false;
+        animator.GetComponent<Player>().isAttack = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
