@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField, Header("跳躍力道"), Range(0, 800)]
     private float jumpPower = 500;
     [SerializeField, Header("是否能夠水平移動")]
-    private bool movementEnable = true;
+    public bool movementEnable = true;
     [SerializeField, Header("是否能夠躲藏")]
     public bool canHide = false;
 
