@@ -17,7 +17,7 @@ namespace TwoD
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            print($"碰到的物件 : {collision.gameObject}");
+            //print($"碰到的物件 : {collision.gameObject}");
             Destroy(gameObject);
         }
 
