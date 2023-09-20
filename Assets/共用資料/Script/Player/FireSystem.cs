@@ -17,13 +17,15 @@ namespace TwoD
         private Transform pointBullet;
         [SerializeField, Header("發射衝擊波力道"), Range(0, 2500)]
         private float powerBullet = 1000;
+        [SerializeField, Header("衝擊波延遲發射時間")]
+        private float waitingSec = 1.5f;
 
         private Animator ani;
 
         private string parHolyFire = "觸發衝擊波";
         private string parNormalFire = "觸發普通攻擊";
         public bool isAttack = false;
-
+        
         private void Awake()
         {
             ani = GetComponent<Animator>();
@@ -43,11 +45,19 @@ namespace TwoD
             {
 
                 ani.SetTrigger(parHolyFire);
-                GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
-                tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
 
+                StartCoroutine(Waiting());
             }
         }
+        IEnumerator Waiting()
+        {
+            yield return new WaitForSeconds(waitingSec);
+
+            GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
+            tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
+
+        }
+
         /// <summary>
         /// 普通二段攻擊
         /// </summary>
