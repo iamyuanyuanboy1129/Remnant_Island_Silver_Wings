@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TwoD;
 using UnityEngine;
@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     private LayerMask layerCheckGround;
     [SerializeField, Header("跳躍力道"), Range(0, 800)]
     private float jumpPower = 500;
+    [SerializeField, Header("是否能夠水平移動")]
+    private bool movementEnable = true;
+    [SerializeField, Header("是否能夠躲藏")]
+    public bool canHide = false;
 
     private Rigidbody2D rig;
     private Animator ani;
@@ -27,6 +31,8 @@ public class Player : MonoBehaviour
     public int gold = 0;
 
     public Quest quest;
+
+    public GameObject player;
 
     [SerializeField, Header("受傷反彈力"), Range(0, 10)]
     public float hurtForce;
@@ -63,11 +69,11 @@ public class Player : MonoBehaviour
         ani = GetComponent<Animator>();
 
     }
-    
+
     public void Start()
     {
         //print("<color=yellow>開始事件</color>")    
-
+        player = gameObject;
     }
 
     public void Update()
@@ -92,18 +98,39 @@ public class Player : MonoBehaviour
     public void Move()
     {
         float h = Input.GetAxis("Horizontal");
-        rig.velocity = new Vector2(h * moveSpeed, rig.velocity.y);
-        //if (Input.GetKey(KeyCode.LeftArrow))
-        if (h < 0)
+        if (movementEnable)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            rig.velocity = new Vector2(h * moveSpeed, rig.velocity.y);
+            //if (Input.GetKey(KeyCode.LeftArrow))
+            if (h < 0)
+            {
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            //else if (Input.GetKey(KeyCode.RightArrow))
+            else if (h > 0)
+            {
+                transform.eulerAngles = Vector3.zero;
+            }
+            ani.SetBool(parRun, h != 0);
         }
-        //else if (Input.GetKey(KeyCode.RightArrow))
-        else if (h > 0)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canHide)
         {
-            transform.eulerAngles = Vector3.zero;
+            movementEnable = false;
+            rig.velocity = Vector3.zero;
+            ani.SetBool(parRun, false);
+            GetComponent<CapsuleCollider2D>().excludeLayers = LayerMask.GetMask("enemy");
+            GetComponent<HealthSystem>().invulnerable = true;
+            GetComponent<HealthSystem>().invulnerableCounter = 900f;
+            player.layer = LayerMask.NameToLayer("Default");
         }
-        ani.SetBool(parRun, h != 0);
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            movementEnable = true;
+            GetComponent<CapsuleCollider2D>().excludeLayers = LayerMask.GetMask("Nothing");
+            GetComponent<HealthSystem>().invulnerable = false;
+            GetComponent<HealthSystem>().invulnerableCounter = 0f;
+            player.layer = LayerMask.NameToLayer("player");
+        }
     }
     /// <summary>
     /// 判斷是否在地面，並且按空白鍵跳躍
@@ -140,7 +167,7 @@ public class Player : MonoBehaviour
         Vector2 dir = new Vector2((transform.position.x - attacker.position.x), 0).normalized;
 
         rig.AddForce(dir * hurtForce, ForceMode2D.Impulse);
-        
+
     }
     /// <summary>
     /// 人物死亡

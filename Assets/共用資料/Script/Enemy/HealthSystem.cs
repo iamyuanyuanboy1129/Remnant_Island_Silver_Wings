@@ -13,7 +13,7 @@ namespace TwoD
 
         [Header("受傷無敵")]
         public float invulnerableDuration;
-        private float invulnerableCounter;
+        public float invulnerableCounter;
         public bool invulnerable;
 
         public UnityEvent<Transform> OnTakeDamage;
