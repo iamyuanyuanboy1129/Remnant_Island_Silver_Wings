@@ -22,6 +22,8 @@ namespace TwoD
         private float waitingSec = 1.5f;
         [SerializeField, Header("神劍攻擊次數")]
         private int holyCount = 2;
+        [SerializeField, Header("第一段攻擊時間"), Range(0, 1)]
+        private float firstAttackTime = 0.3f;
 
         private Animator ani;
 
@@ -84,9 +86,16 @@ namespace TwoD
                     GetComponent<HealthSystem>().invulnerableCounter = 0f;
                     GetComponent<Player>().player.layer = LayerMask.NameToLayer("player");
                     //隱藏後攻擊上升
-                    //GetComponentInChildren<DamageSystem>().damage += 100;
+                    gameObject.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+                    GetComponentInChildren<DamageSystem>().damage += 100;
+                    StartCoroutine(WaitFirstAttack());
                 }
             }
+        }
+        IEnumerator WaitFirstAttack()
+        {
+            yield return new WaitForSeconds(firstAttackTime);
+            GetComponentInChildren<DamageSystem>().damage -= 100;
         }
     }
 }
