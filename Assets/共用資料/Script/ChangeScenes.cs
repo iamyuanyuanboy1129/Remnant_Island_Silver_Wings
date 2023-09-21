@@ -29,7 +29,7 @@ public class ChangeScenes : MonoBehaviour
         //UnityEngine.SceneManagement.SceneManager.LoadScene("1");
     }
     /// <summary>
-    /// 讀取存檔
+    /// 讀取存檔。
     /// </summary>
     public void LoadScene()
     {
