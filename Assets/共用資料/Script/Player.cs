@@ -78,8 +78,12 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        if (isAttack || player.GetComponent<FireSystem>().isHolyAttack)
+        {
+            rig.velocity = Vector3.zero;
+        }
         //print("<color=yellow>更新事件</color>")
-        if (!isHurt && !isAttack)
+        if (!isHurt && !isAttack && !player.GetComponent<FireSystem>().isHolyAttack)
         {
             Move();
         }
