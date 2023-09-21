@@ -81,8 +81,7 @@ public class Player : MonoBehaviour
         //print("<color=yellow>開始事件</color>")    
         player = gameObject;
         //儲存目前場景位置
-        scene = SceneManager.GetActiveScene();
-        sceneName = scene.name;
+        SaveCurrentScene();
     }
 
     public void Update()
@@ -190,6 +189,14 @@ public class Player : MonoBehaviour
         ani.SetBool("isDead", true);
         GameObject.Find("Player_Idle").GetComponent<Player>().enabled = false;
     }
-
+    /// <summary>
+    /// 儲存目前場景位置
+    /// </summary>
+    public void SaveCurrentScene()
+    {
+        scene = SceneManager.GetActiveScene();
+        sceneName = scene.name;
+        PlayerPrefs.SetString("TargetScene", sceneName);
+    }
     #endregion
 }
