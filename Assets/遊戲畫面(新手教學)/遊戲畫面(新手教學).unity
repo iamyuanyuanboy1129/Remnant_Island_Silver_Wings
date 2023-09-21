@@ -17355,6 +17355,7 @@ GameObject:
   - component: {fileID: 758890884}
   - component: {fileID: 758890885}
   - component: {fileID: 758890886}
+  - component: {fileID: 758890887}
   m_Layer: 7
   m_Name: Player_Idle
   m_TagString: Player
@@ -17567,7 +17568,10 @@ MonoBehaviour:
   pointBullet: {fileID: 27930306}
   powerBullet: 1000
   waitingSec: 0.7
+  holyCount: 2
+  firstAttackTime: 0.3
   isAttack: 0
+  canHolyFire: 1
 --- !u!114 &758890886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17627,6 +17631,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &758890887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758890878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c192afa8dac0f8439f9a3fd2c1d8cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &765206646
 PrefabInstance:
   m_ObjectHideFlags: 0
