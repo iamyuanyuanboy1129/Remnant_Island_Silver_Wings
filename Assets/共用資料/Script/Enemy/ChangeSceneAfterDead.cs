@@ -6,6 +6,9 @@ namespace TwoD
 {
     public class ChangeSceneAfterDead : MonoBehaviour
     {
+        [SerializeField, Header("下一個場景名稱")]
+        public string nextSceneName;
+
         private GameObject gameObject;
         // Start is called before the first frame update
         void Start()
@@ -24,7 +27,7 @@ namespace TwoD
         IEnumerator WaitToChangeScene()
         {
             yield return new WaitForSeconds(3);
-            UnityEngine.SceneManagement.SceneManager.LoadScene("皇宮");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneName);
         }
     }
 }
