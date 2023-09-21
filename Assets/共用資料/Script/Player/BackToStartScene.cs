@@ -17,7 +17,12 @@ public class BackToStartScene : MonoBehaviour
     {
         if (gameObject.GetComponent<HealthSystem>().currentHealth == 0)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("開始畫面");
+            StartCoroutine(WaitToChangeScene());
         }
+    }
+    IEnumerator WaitToChangeScene()
+    {
+        yield return new WaitForSeconds(3);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("開始畫面");
     }
 }
