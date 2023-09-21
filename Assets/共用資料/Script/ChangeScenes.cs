@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +27,14 @@ public class ChangeScenes : MonoBehaviour
         print("開始遊戲");
         UnityEngine.SceneManagement.SceneManager.LoadScene(nameSceneToChange);
         //UnityEngine.SceneManagement.SceneManager.LoadScene("1");
+    }
+    /// <summary>
+    /// 讀取存檔
+    /// </summary>
+    public void LoadScene()
+    {
+        nameSceneToChange = PlayerPrefs.GetString("TargetScene");
+        Invoke("DelayChangeScene", soundTime);
     }
     /// <summary>
     /// 退出遊戲
