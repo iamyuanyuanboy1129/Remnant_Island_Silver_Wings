@@ -20,11 +20,15 @@ namespace TwoD
         public UnityEvent OnDie;
 
         private Rigidbody2D rig;
+        private Transform player;
+        private GameObject gameObject;
 
         private void Start()
         {
             currentHealth = maxHealth;
             rig = GetComponent<Rigidbody2D>();
+            player = GameObject.Find("Player_Idle").transform;
+            gameObject = GameObject.Find(this.name);
         }
 
         private void Update()
@@ -51,6 +55,7 @@ namespace TwoD
                 TriggerInvulnerable();
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
+                FlipToPlayer();
             }
             else
             {
@@ -72,6 +77,21 @@ namespace TwoD
                 invulnerableCounter = invulnerableDuration;
             }
         }
-
+        /// <summary>
+        /// 轉向玩家
+        /// </summary>
+        private void FlipToPlayer()
+        {
+            if(player.transform.position.x < transform.position.x)
+            {
+                gameObject.GetComponent<StateWander>().direction = -1;
+                transform.eulerAngles = new Vector3(0, 180, 0);
+            }
+            else if (player.transform.position.x > transform.position.x)
+            {
+                gameObject.GetComponent<StateWander>().direction = 1;
+                transform.eulerAngles = Vector3.zero;
+            }
+        }
     }
 }
