@@ -16,6 +16,8 @@ namespace TwoD
         private float invulnerableCounter;
         public bool invulnerable;
 
+        public UnityEvent<HealthSystem> OnHealthChange;
+
         public UnityEvent<Transform> OnTakeDamage;
         public UnityEvent OnDie;
 
@@ -24,6 +26,8 @@ namespace TwoD
         private void Start()
         {
             currentHealth = maxHealth;
+            OnHealthChange?.Invoke(this);
+
             rig = GetComponent<Rigidbody2D>();
         }
 
@@ -59,6 +63,8 @@ namespace TwoD
                 //觸發死亡
                 OnDie?.Invoke();
             }
+
+            OnHealthChange?.Invoke(this);
         }
 
         /// <summary>
