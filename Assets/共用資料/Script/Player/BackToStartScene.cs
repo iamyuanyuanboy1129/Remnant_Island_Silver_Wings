@@ -23,6 +23,6 @@ public class BackToStartScene : MonoBehaviour
     IEnumerator WaitToChangeScene()
     {
         yield return new WaitForSeconds(3);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("開始畫面");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("復活場景");
     }
 }
