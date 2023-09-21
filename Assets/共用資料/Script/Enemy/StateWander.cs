@@ -119,13 +119,11 @@ namespace TwoD
             if (Vector3.Distance(transform.position, pointRight) < 0.1f)
             {
                 direction = -1;
-                //transform.eulerAngles = Vector3.zero;
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
             if (Vector3.Distance(transform.position, pointLeft) < 0.1f)
             {
                 direction = 1;
-                //transform.eulerAngles = new Vector3(0, 180, 0);
                 transform.eulerAngles = Vector3.zero;
             }
 
