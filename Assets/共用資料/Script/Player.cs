@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
     {
         //print("<color=yellow>開始事件</color>")    
         player = gameObject;
-        //儲存目前場景位置
+        //儲存目前場景位置。
         SaveCurrentScene();
     }
 
