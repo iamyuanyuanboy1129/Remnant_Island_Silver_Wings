@@ -31,6 +31,7 @@ namespace TwoD
         private string parNormalFire = "觸發普通攻擊";
         public bool isAttack = false;
         public bool canHolyFire = true;
+        public bool isHolyAttack = false;
 
         private void Awake()
         {
@@ -51,6 +52,7 @@ namespace TwoD
             {
                 holyCount--;
                 canHolyFire = false;
+                isHolyAttack = true;
                 ani.SetTrigger(parHolyFire);
 
                 StartCoroutine(Waiting());
@@ -63,6 +65,7 @@ namespace TwoD
             GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
             tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
             canHolyFire = true;
+            isHolyAttack = false;
         }
 
         /// <summary>
