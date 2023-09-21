@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TwoD;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -41,6 +44,9 @@ public class Player : MonoBehaviour
 
     public bool isAttack;
 
+    public UnityEngine.SceneManagement.Scene scene;
+    [SerializeField, Header("當前場景名稱")]
+    public string sceneName;
     #endregion
 
     #region 事件
@@ -74,13 +80,16 @@ public class Player : MonoBehaviour
     {
         //print("<color=yellow>開始事件</color>")    
         player = gameObject;
+        //儲存目前場景位置
+        scene = SceneManager.GetActiveScene();
+        sceneName = scene.name;
     }
 
     public void Update()
     {
         if (isAttack || player.GetComponent<FireSystem>().isHolyAttack)
         {
-            rig.velocity = Vector3.zero;
+            rig.velocity = new Vector3(0, rig.velocity.y);
         }
         //print("<color=yellow>更新事件</color>")
         if (!isHurt && !isAttack && !player.GetComponent<FireSystem>().isHolyAttack)
