@@ -28,6 +28,11 @@ public class ChangeScenes : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(nameSceneToChange);
         //UnityEngine.SceneManagement.SceneManager.LoadScene("1");
     }
+    public void StartGame()
+    {
+        nameSceneToChange = "遊戲畫面(新手教學)";
+        Invoke("DelayChangeScene", soundTime);
+    }
     /// <summary>
     /// 讀取存檔。
     /// </summary>
