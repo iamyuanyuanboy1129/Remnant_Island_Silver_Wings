@@ -16785,7 +16785,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 1378814645}
@@ -26345,7 +26345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4318630c87e98ba419366747f8e3ce7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: "\u958B\u59CB\u756B\u9762"
+  nextSceneName: "\u5834\u666F\u65BD\u5DE5\u4E2D"
 --- !u!1 &1175666212
 GameObject:
   m_ObjectHideFlags: 0
