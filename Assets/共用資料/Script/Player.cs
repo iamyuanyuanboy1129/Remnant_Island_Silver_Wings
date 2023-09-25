@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
     public void PlayHurt()
     {
         ani.SetTrigger("hurt");
-
+        ani.SetBool("isRun", false);
     }
     public void GetHurt(Transform attacker)
     {
