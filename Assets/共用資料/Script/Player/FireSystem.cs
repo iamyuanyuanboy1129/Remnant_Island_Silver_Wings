@@ -92,6 +92,8 @@ namespace TwoD
                     gameObject.transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
                     GetComponentInChildren<DamageSystem>().damage += 100;
                     StartCoroutine(WaitFirstAttack());
+                    //透明度恢復
+                    gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 }
             }
         }
