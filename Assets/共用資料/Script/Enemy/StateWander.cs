@@ -116,12 +116,12 @@ namespace TwoD
         /// </summary>
         private void MoveAndFlip()
         {
-            if (Vector3.Distance(transform.position, pointRight) < 0.1f)
+            if (Vector3.Distance(transform.position, pointRight) < 0.3f)
             {
                 direction = -1;
                 transform.eulerAngles = new Vector3(0, 180, 0);
             }
-            if (Vector3.Distance(transform.position, pointLeft) < 0.1f)
+            if (Vector3.Distance(transform.position, pointLeft) < 0.3f)
             {
                 direction = 1;
                 transform.eulerAngles = Vector3.zero;

@@ -23,6 +23,8 @@ namespace TwoD
             if (timer == 0)
             {
                 ani.SetTrigger(parAttack);
+                if( this.name == "Enemy_Boss")
+                    ani.speed = 3;
             }
             else
             {
@@ -38,6 +40,8 @@ namespace TwoD
                 {
                     canSendAttack = true;
                     timer = 0;
+                    if (this.name == "Enemy_Boss")
+                        ani.speed = 1;
                     return stateTrack;
                 }
             }
