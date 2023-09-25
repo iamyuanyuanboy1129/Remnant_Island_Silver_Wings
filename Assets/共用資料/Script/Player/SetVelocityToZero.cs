@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace TwoD
@@ -11,8 +12,7 @@ namespace TwoD
         // Start is called before the first frame update
         void Start()
         {
-            gameObject = GameObject.Find("Player_Idle");
-            rig = gameObject.GetComponent<Rigidbody2D>();
+            rig = this.GetComponent<Rigidbody2D>();
         }
 
         // Update is called once per frame
