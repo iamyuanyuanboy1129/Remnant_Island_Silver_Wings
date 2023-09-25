@@ -134,6 +134,8 @@ public class Player : MonoBehaviour
             GetComponent<HealthSystem>().invulnerable = true;
             GetComponent<HealthSystem>().invulnerableCounter = 900f;
             player.layer = LayerMask.NameToLayer("Default");
+            ///躲避變透明
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -142,6 +144,8 @@ public class Player : MonoBehaviour
             GetComponent<HealthSystem>().invulnerable = false;
             GetComponent<HealthSystem>().invulnerableCounter = 0f;
             player.layer = LayerMask.NameToLayer("player");
+            ///恢復正常
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
     }
     /// <summary>
