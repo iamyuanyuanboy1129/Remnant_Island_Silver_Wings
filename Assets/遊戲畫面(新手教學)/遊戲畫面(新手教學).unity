@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1500024741}
+  selectedFlowchart: {fileID: 1375015573}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -17882,6 +17882,7 @@ GameObject:
   - component: {fileID: 758890885}
   - component: {fileID: 758890886}
   - component: {fileID: 758890887}
+  - component: {fileID: 758890888}
   m_Layer: 7
   m_Name: Player_Idle
   m_TagString: Player
@@ -18074,7 +18075,7 @@ MonoBehaviour:
       requiredAmount: 0
       currentAmount: 0
   player: {fileID: 0}
-  hurtForce: 3
+  hurtForce: 1.5
   isHurt: 0
   isDead: 0
   isAttack: 0
@@ -18186,6 +18187,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c192afa8dac0f8439f9a3fd2c1d8cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &758890888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758890878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8afafbc0be98044b9ef1a06c17c9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &760141386
@@ -27386,6 +27399,7 @@ GameObject:
   - component: {fileID: 1375015582}
   - component: {fileID: 1375015580}
   - component: {fileID: 1375015579}
+  - component: {fileID: 1375015585}
   m_Layer: 0
   m_Name: "\u5B78\u7FD2\u653B\u64CA\u5149\u5708"
   m_TagString: Untagged
@@ -32290,7 +32304,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 91
-    y: 147
+    y: 144
     width: 98
     height: 40
   tint: {r: 0.2805456, g: 1, b: 0, a: 1}
@@ -32300,6 +32314,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 1375015571}
   commandList:
+  - {fileID: 1375015585}
   - {fileID: 1375015575}
   - {fileID: 1375015584}
   - {fileID: 1375015583}
@@ -32714,6 +32729,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &1375015585
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375015564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 14
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 758890878}
+  targetComponentAssemblyName: TwoD.SetVelocityToZero, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SetVelocityToZero
+  targetMethod: SetV2Z
+  targetMethodText: 'SetV2Z (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1 &1377018983
 GameObject:
   m_ObjectHideFlags: 0
@@ -34026,7 +34069,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 1500024740}
   selectedCommands:
-  - {fileID: 1500024747}
+  - {fileID: 1500024738}
   variables: []
   description: 
   stepPause: 0
@@ -38928,7 +38971,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1500024747
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -38955,7 +38998,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1500024748
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

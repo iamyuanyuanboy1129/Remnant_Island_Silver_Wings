@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TwoD
 {
@@ -9,13 +6,14 @@ namespace TwoD
     {
         GameObject gameObject;
         Rigidbody2D rig;
-        // Start is called before the first frame update
+        Animator air;
+
         void Start()
         {
             rig = this.GetComponent<Rigidbody2D>();
+            air = this.GetComponent<Animator>();
         }
 
-        // Update is called once per frame
         void Update()
         {
 
@@ -24,6 +22,8 @@ namespace TwoD
         public void SetV2Z()
         {
             rig.velocity = Vector3.zero;
+            air.SetBool("isRun", false);
         }
+
     }
 }
