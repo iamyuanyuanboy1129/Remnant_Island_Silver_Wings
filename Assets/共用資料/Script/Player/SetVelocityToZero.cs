@@ -26,7 +26,7 @@ namespace TwoD
             rig.velocity = Vector3.zero;
 
             //ani.SetBool("isRun", false);
-            animation.Stop();
+            //animation.Stop();
 
         }
 
