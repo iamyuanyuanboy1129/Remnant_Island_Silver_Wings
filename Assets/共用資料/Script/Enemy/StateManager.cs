@@ -37,7 +37,8 @@ namespace TwoD
         {
             ani.SetBool("開關死亡", true);
             this.GetComponent<BoxCollider2D>().enabled = false;
-            GameObject.Find(this.name).GetComponent<StateManager>().enabled = false;
+            //GameObject.Find(this.name).GetComponent<StateManager>().enabled = false;
+            this.GetComponent<StateManager>().enabled = false;
         }
     }
 }
