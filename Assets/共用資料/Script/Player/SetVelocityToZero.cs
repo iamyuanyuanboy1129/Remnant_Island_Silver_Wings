@@ -7,6 +7,7 @@ namespace TwoD
         GameObject gameObject;
         Rigidbody2D rig;
         Animator air;
+        
 
         void Start()
         {
@@ -23,6 +24,7 @@ namespace TwoD
         {
             rig.velocity = Vector3.zero;
             air.SetBool("isRun", false);
+
         }
 
     }

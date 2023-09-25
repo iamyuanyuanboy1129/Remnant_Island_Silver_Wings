@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1375015573}
+  selectedFlowchart: {fileID: 760141395}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -674,141 +674,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7697949853889157856, guid: 14765caab84736547b90c3b9f5880663, type: 3}
   m_PrefabInstance: {fileID: 765206646}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &41967175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 41967176}
-  - component: {fileID: 41967178}
-  - component: {fileID: 41967177}
-  m_Layer: 5
-  m_Name: HP_Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &41967176
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41967175}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1825125845}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &41967177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41967175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 100/100
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &41967178
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41967175}
-  m_CullTransparentMesh: 1
 --- !u!1001 &49286180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18221,6 +18086,10 @@ GameObject:
   - component: {fileID: 760141390}
   - component: {fileID: 760141389}
   - component: {fileID: 760141388}
+  - component: {fileID: 760141402}
+  - component: {fileID: 760141400}
+  - component: {fileID: 760141401}
+  - component: {fileID: 760141399}
   m_Layer: 0
   m_Name: "BOSS\u5287\u60C5\u5149\u5708"
   m_TagString: Untagged
@@ -18417,10 +18286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: "\u606D\u559C\u59B3\u5B78\u6703\u79FB\u52D5\u65B9\u5F0F\u4E86"
+  storyText: "\u524D\u9762\u90A3\u500B\u4EBA\u662F... \u5ABD\u5ABD?"
   description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
+  character: {fileID: 1145029617}
+  portrait: {fileID: 21300000, guid: dea8d09c606907a43a64df2e0a959027, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -18462,7 +18331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 88
+    x: 89
     y: 150
     width: 98
     height: 40
@@ -18473,8 +18342,12 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 760141393}
   commandList:
+  - {fileID: 760141402}
   - {fileID: 760141390}
   - {fileID: 760141392}
+  - {fileID: 760141399}
+  - {fileID: 760141401}
+  - {fileID: 760141400}
   - {fileID: 760141391}
   - {fileID: 760141389}
   - {fileID: 760141388}
@@ -18495,7 +18368,7 @@ MonoBehaviour:
   scrollPos: {x: -60.027946, y: -0.8995285}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 610
+  blockViewHeight: 534
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -18503,8 +18376,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 760141394}
+  selectedCommands:
+  - {fileID: 760141401}
   variables: []
   description: 
   stepPause: 0
@@ -23356,6 +23231,115 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &760141399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760141386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 9
+  indentLevel: 0
+  storyText: 
+  description: 
+  character: {fileID: 1145029617}
+  portrait: {fileID: 21300000, guid: dea8d09c606907a43a64df2e0a959027, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &760141400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760141386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 7
+  indentLevel: 0
+  storyText: "\u606D\u559C\u59B3\u5B78\u6703\u79FB\u52D5\u65B9\u5F0F\u4E86"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &760141401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760141386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  storyText: 
+  description: 
+  character: {fileID: 554768657}
+  portrait: {fileID: 21300000, guid: f40457545c830544089997e8cfb5c707, type: 3}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &760141402
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760141386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 6
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 758890878}
+  targetComponentAssemblyName: TwoD.SetVelocityToZero, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SetVelocityToZero
+  targetMethod: SetV2Z
+  targetMethodText: 'SetV2Z (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &765206646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33780,6 +33764,7 @@ GameObject:
   - component: {fileID: 1500024746}
   - component: {fileID: 1500024747}
   - component: {fileID: 1500024748}
+  - component: {fileID: 1500024749}
   m_Layer: 0
   m_Name: "\u5B78\u7FD2\u8EB2\u907F\u5149\u5708"
   m_TagString: Untagged
@@ -34022,7 +34007,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 88
-    y: 148
+    y: 147
     width: 98
     height: 40
   tint: {r: 0.2805456, g: 1, b: 0, a: 1}
@@ -34032,6 +34017,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 1500024739}
   commandList:
+  - {fileID: 1500024749}
   - {fileID: 1500024736}
   - {fileID: 1500024738}
   - {fileID: 1500024748}
@@ -34058,7 +34044,7 @@ MonoBehaviour:
   scrollPos: {x: -60.027946, y: -0.8995285}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 606
+  blockViewHeight: 517
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -34068,8 +34054,7 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 1500024740}
-  selectedCommands:
-  - {fileID: 1500024738}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -38956,7 +38941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "\u5982\u679C\u60F3\u8981\u5F9E\u8349\u5806\u4E2D\u51FA\u4F86\uFF0C\u8ACB\u8A66\u8457\u4F7F\u7528\u65B9\u5411\u9375\"\u2193\"\u3002"
+  storyText: "\u5982\u679C\u60F3\u8981\u5F9E\u8349\u5806\u4E2D\u51FA\u4F86\uFF0C\u8ACB\u63A5\u8457\u4F7F\u7528\u65B9\u5411\u9375\"\u2193\"\u3002"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -39023,6 +39008,34 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &1500024749
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500024732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 10
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 758890878}
+  targetComponentAssemblyName: TwoD.SetVelocityToZero, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: SetVelocityToZero
+  targetMethod: SetV2Z
+  targetMethodText: 'SetV2Z (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!1001 &1508086442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40611,7 +40624,6 @@ RectTransform:
   - {fileID: 1278002717}
   - {fileID: 2080966103}
   - {fileID: 276048992}
-  - {fileID: 41967176}
   m_Father: {fileID: 15906867}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
