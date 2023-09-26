@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using TwoD;
-using UnityEditor.SearchService;
+﻿using TwoD;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour

@@ -618,7 +618,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 894080395}
   selectedCommands:
-  - {fileID: 894080410}
+  - {fileID: 894080393}
   variables: []
   description: 
   stepPause: 0
@@ -1162,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SayDialog
       objectReference: {fileID: 0}
+    - target: {fileID: 11488896, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: c02f2f50a821d374593ced8c2ea3a37d, type: 3}
     - target: {fileID: 11488904, guid: 8a005a9e0713f4cc1b5ad29fb07657d3, type: 3}
       propertyPath: m_Type
       value: 1
