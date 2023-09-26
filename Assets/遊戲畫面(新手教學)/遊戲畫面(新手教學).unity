@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1375015573}
+  selectedFlowchart: {fileID: 223851973}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -2443,7 +2443,7 @@ MonoBehaviour:
   scrollPos: {x: -3.5, y: 76.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 507
+  blockViewHeight: 453
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -2453,7 +2453,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 223851974}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 223851982}
   variables: []
   description: 
   stepPause: 0
@@ -17901,6 +17902,7 @@ GameObject:
   - component: {fileID: 758890886}
   - component: {fileID: 758890887}
   - component: {fileID: 758890888}
+  - component: {fileID: 758890889}
   m_Layer: 7
   m_Name: Player_Idle
   m_TagString: Player
@@ -18217,6 +18219,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b8afafbc0be98044b9ef1a06c17c9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &758890889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758890878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e90a70fbeaefc8d479d2244768465407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &760141386

@@ -1,8 +1,10 @@
-﻿using Fungus;
+﻿
+using Fungus;
 using System.Collections;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 namespace TwoD
@@ -21,7 +23,7 @@ namespace TwoD
         [SerializeField, Header("衝擊波延遲發射時間")]
         private float waitingSec = 1.5f;
         [SerializeField, Header("神劍攻擊次數")]
-        private int holyCount = 2;
+        public int holyCount;
         [SerializeField, Header("第一段攻擊時間"), Range(0, 1)]
         private float firstAttackTime = 0.3f;
 
@@ -36,6 +38,16 @@ namespace TwoD
         private void Awake()
         {
             ani = GetComponent<Animator>();
+            if(SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)" ) 
+            {
+                this.GetComponent<SetGodSwordCount>().SetToZero();
+                holyCount = PlayerPrefs.GetInt("GodSword");
+            }
+            else
+            {
+                this.GetComponent<SetGodSwordCount>().SetToTwo();
+                holyCount = PlayerPrefs.GetInt("GodSword");
+            }
         }
 
         private void Update()

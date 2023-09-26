@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         //print("<color=yellow>喚醒事件</color>")
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
-
     }
 
     public void Start()
