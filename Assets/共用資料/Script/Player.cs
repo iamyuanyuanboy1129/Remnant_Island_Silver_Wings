@@ -186,6 +186,7 @@ public class Player : MonoBehaviour
     {
         ani.SetBool("isDead", true);
         GameObject.Find("Player_Idle").GetComponent<Player>().enabled = false;
+        GameObject.Find("Player_Idle").GetComponent<FireSystem>().enabled = false;
     }
     /// <summary>
     /// 儲存目前場景位置
