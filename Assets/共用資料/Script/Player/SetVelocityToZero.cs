@@ -7,13 +7,12 @@ namespace TwoD
         GameObject gameObject;
         Rigidbody2D rig;
         Animator ani;
-        Animation animation;
         
         void Start()
         {
             rig = this.GetComponent<Rigidbody2D>();
             ani = this.GetComponent<Animator>();
-            animation = this.GetComponent<Animation>();
+
         }
 
         void Update()
@@ -25,8 +24,8 @@ namespace TwoD
         {
             rig.velocity = Vector3.zero;
 
-            //ani.SetBool("isRun", false);
-            //animation.Stop();
+            ani.SetBool("isRun", false);
+            ani.SetBool("isJump", false);
 
         }
 
