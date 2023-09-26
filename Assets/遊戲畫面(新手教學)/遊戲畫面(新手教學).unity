@@ -3005,7 +3005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &285425960
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18268,7 +18268,7 @@ MonoBehaviour:
   powerBullet: 1000
   waitingSec: 0.7
   holyCount: 2
-  firstAttackTime: 0.3
+  firstAttackTime: 0.25
   isAttack: 0
   canHolyFire: 1
   isHolyAttack: 0
@@ -27148,7 +27148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1259724406
 MonoBehaviour:
   m_ObjectHideFlags: 0
