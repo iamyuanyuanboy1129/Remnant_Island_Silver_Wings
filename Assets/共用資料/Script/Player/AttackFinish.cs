@@ -22,6 +22,7 @@ public class AttackFinish : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<Player>().isAttack = false;
+        animator.GetComponent<FireSystem>().canNormalFire = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -41,7 +41,7 @@ namespace TwoD
         {
             audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
             ani = GetComponent<Animator>();
-            if(SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)" ) 
+            if (SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)")
             {
                 this.GetComponent<SetGodSwordCount>().SetToZero();
                 holyCount = PlayerPrefs.GetInt("GodSword");
@@ -88,10 +88,15 @@ namespace TwoD
         /// </summary>
         public void NormalFire()
         {
-            if (Input.GetKeyDown(KeyCode.V) && canNormalFire)
+            if (Input.GetKeyDown(KeyCode.V))
             {
-                /*canNormalFire = false;
-                audioManager.PlaySFX(audioManager.attackSound);*/
+                //判斷是否發出聲音
+                if (canNormalFire)
+                {
+                    canNormalFire = false;
+                    audioManager.PlaySFX(audioManager.attackSound);
+                }
+                //普通攻擊
                 isAttack = true;
                 ani.SetBool("isAttack", true);
                 this.GetComponent<Player>().isAttack = isAttack;
