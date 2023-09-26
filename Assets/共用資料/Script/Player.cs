@@ -119,7 +119,7 @@ public class Player : MonoBehaviour
             }
             ani.SetBool(parRun, h != 0);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canHide)
+        if ((Input.GetKeyDown(KeyCode.UpArrow) && canHide)|| (Input.GetKeyDown(KeyCode.W) && canHide))
         {
             movementEnable = false;
             rig.velocity = Vector3.zero;
@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
             ///躲避變透明
             gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0.2f);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             movementEnable = true;
             GetComponent<CapsuleCollider2D>().excludeLayers = LayerMask.GetMask("Nothing");
