@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: key
   itemImage: {fileID: -1826517228, guid: 93f68decf90ce9d4cb67d48f88547629, type: 3}
-  itemHold: 4
+  itemHold: 1
   itemInfo: This is key
   equip: 0
