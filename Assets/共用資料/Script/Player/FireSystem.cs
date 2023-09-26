@@ -28,15 +28,18 @@ namespace TwoD
         private float firstAttackTime = 0.3f;
 
         private Animator ani;
+        private AudioManager audioManager;
 
         private string parHolyFire = "觸發衝擊波";
         private string parNormalFire = "觸發普通攻擊";
         public bool isAttack = false;
         public bool canHolyFire = true;
         public bool isHolyAttack = false;
+        public bool canNormalFire = true;
 
         private void Awake()
         {
+            audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
             ani = GetComponent<Animator>();
             if(SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)" ) 
             {
@@ -85,8 +88,10 @@ namespace TwoD
         /// </summary>
         public void NormalFire()
         {
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetKeyDown(KeyCode.V) && canNormalFire)
             {
+                /*canNormalFire = false;
+                audioManager.PlaySFX(audioManager.attackSound);*/
                 isAttack = true;
                 ani.SetBool("isAttack", true);
                 this.GetComponent<Player>().isAttack = isAttack;

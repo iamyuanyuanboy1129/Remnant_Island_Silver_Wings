@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [Header("聲音片段")]
     public AudioClip background;
     public AudioClip buttonClick;
+    public AudioClip attackSound;
 
     private void Start()
     {
