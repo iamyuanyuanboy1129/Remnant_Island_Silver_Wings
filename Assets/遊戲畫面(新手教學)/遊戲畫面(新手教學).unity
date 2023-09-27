@@ -18227,6 +18227,8 @@ MonoBehaviour:
   jumpPower: 300
   movementEnable: 1
   canHide: 0
+  dodgeSpeed: 2000
+  direction: 1
   health: 100
   gold: 0
   quest:
@@ -18662,7 +18664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -55.88362, y: 12.585011}
+  scrollPos: {x: -39.388798, y: 9.492228}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 684

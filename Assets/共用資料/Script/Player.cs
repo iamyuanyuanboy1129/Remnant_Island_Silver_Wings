@@ -19,6 +19,10 @@ public class Player : MonoBehaviour
     public bool movementEnable = true;
     [SerializeField, Header("是否能夠躲藏")]
     public bool canHide = false;
+    [SerializeField, Range(0, 5000), Header("閃避力道")]
+    public float dodgeSpeed = 1000f;
+    [SerializeField, Header("面對方向")]
+    public int direction = 1;
 
     private Rigidbody2D rig;
     private Animator ani;
@@ -111,14 +115,17 @@ public class Player : MonoBehaviour
             if (h < 0)
             {
                 transform.eulerAngles = new Vector3(0, 180, 0);
+                direction = -1;
             }
             //else if (Input.GetKey(KeyCode.RightArrow))
             else if (h > 0)
             {
                 transform.eulerAngles = Vector3.zero;
+                direction = 1;
             }
             ani.SetBool(parRun, h != 0);
         }
+        //躲藏系統
         if ((Input.GetKeyDown(KeyCode.UpArrow) && canHide)|| (Input.GetKeyDown(KeyCode.W) && canHide))
         {
             movementEnable = false;
@@ -140,6 +147,13 @@ public class Player : MonoBehaviour
             player.layer = LayerMask.NameToLayer("player");
             ///恢復正常
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        //閃避系統
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            //rig.velocity = new Vector2(-direction * dodgeSpeed, jumpPower * 0.2f);
+            Vector2 dir = new Vector2( -direction * dodgeSpeed, jumpPower * 0.5f);
+            rig.AddForce(dir);
         }
     }
     /// <summary>
