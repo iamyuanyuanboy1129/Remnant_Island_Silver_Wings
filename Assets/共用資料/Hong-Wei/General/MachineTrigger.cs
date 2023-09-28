@@ -34,7 +34,7 @@ public class MachineTrigger : MonoBehaviour
                 }
                 isArrive = true;
             }
-            ani.SetTrigger("Start");
+            ani.SetTrigger("Move");
             isArrive = true;
             isFirstStart = false;
         }
