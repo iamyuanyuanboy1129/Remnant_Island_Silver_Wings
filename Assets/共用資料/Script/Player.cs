@@ -170,7 +170,7 @@ public class Player : MonoBehaviour
     /// 檢查角色是否在地板
     /// </summary>
     /// <returns>是否在地板上</returns>
-    private bool CheckGround()
+    public bool CheckGround()
     {
         Collider2D hit = Physics2D.OverlapBox(transform.position + v3CheckGroundOffset, v3CheckGroundSize, 0, layerCheckGround);
         ani.SetBool(parJump, !hit);
