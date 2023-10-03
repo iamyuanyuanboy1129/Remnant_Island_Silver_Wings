@@ -550,7 +550,8 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 270149844}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 270149849}
   variables: []
   description: 
   stepPause: 0
@@ -579,7 +580,7 @@ MonoBehaviour:
   storyText: "\u73FE\u5728\u9084\u4E0D\u662F\u4F60\u5012\u4E0B\u7684\u6642\u5019\u3002"
   description: 
   character: {fileID: 65635464}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 74992a3598ac8ca4d8d6f09045cfcf38, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -605,7 +606,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 90
+    width: 89
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -640,7 +641,7 @@ MonoBehaviour:
   storyText: "\u7526\u9192\u5427\uFF01\u6211\u7684\u82F1\u96C4\u3002"
   description: 
   character: {fileID: 65635464}
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 74992a3598ac8ca4d8d6f09045cfcf38, type: 3}
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
@@ -794,7 +795,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &270149853
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -1538,7 +1539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -460.43, y: -1000}
+  m_AnchoredPosition: {x: -460.43, y: NaN}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &893335225
@@ -1698,7 +1699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 460.43, y: -1000}
+  m_AnchoredPosition: {x: 460.43, y: NaN}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1007689135
@@ -1774,7 +1775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 1300, y: -1000}
+  m_AnchoredPosition: {x: 1300, y: NaN}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1018166770
@@ -2142,6 +2143,7 @@ MonoBehaviour:
   isAttack: 0
   canHolyFire: 1
   isHolyAttack: 0
+  canNormalFire: 1
 --- !u!114 &1259028700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2163,6 +2165,8 @@ MonoBehaviour:
   jumpPower: 300
   movementEnable: 1
   canHide: 0
+  dodgeSpeed: 1000
+  direction: 1
   health: 100
   gold: 0
   quest:
@@ -7742,7 +7746,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -1300, y: -1000}
+  m_AnchoredPosition: {x: -1300, y: NaN}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1873716267
@@ -8176,7 +8180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -1000}
+  m_AnchoredPosition: {x: 0, y: NaN}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &1992033775
