@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Fungus;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
@@ -6,23 +7,41 @@ using UnityEngine.Timeline;
 
 public class WindFloatZone : MonoBehaviour
 {
-    [SerializeField,Header("玩家")]
-    private GameObject player;
-    [SerializeField, Header("漂浮力道"), Range(0,-0.5f)]
+    [SerializeField, Header("漂浮力道"), Range(0, -0.5f)]
     private float forceUP;
 
-    private Rigidbody2D gravity;
+    private bool inWindRange = false;
 
-    private void Awake()
+    private void Update()
     {
-        gravity = player.GetComponent<Rigidbody2D>();
+        if (inWindRange && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().gravityScale += 0.1f;
+        }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gravity.gravityScale = forceUP;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = forceUP;
+        }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            inWindRange = true;
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        gravity.gravityScale = 1;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            inWindRange = false;
+        }
     }
 }
