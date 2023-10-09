@@ -7,24 +7,29 @@ using UnityEngine.Timeline;
 
 public class WindFloatZone : MonoBehaviour
 {
-    [SerializeField, Header("漂浮力道"), Range(0, -0.5f)]
-    private float forceUP;
-
     private bool inWindRange = false;
+    private float originalSurfaceLevel;
+
+    private BuoyancyEffector2D effector;
+
+    private void Start()
+    {
+        effector = GetComponent<BuoyancyEffector2D>();
+        originalSurfaceLevel = effector.surfaceLevel;
+    }
 
     private void Update()
     {
         if (inWindRange && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().gravityScale += 0.1f;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = forceUP;
+            if (effector.surfaceLevel > 0)
+            {
+                effector.surfaceLevel--;
+            }
+            else
+            {
+                effector.surfaceLevel = 0;
+            }
         }
     }
 
@@ -40,7 +45,7 @@ public class WindFloatZone : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            effector.surfaceLevel = originalSurfaceLevel;
             inWindRange = false;
         }
     }
