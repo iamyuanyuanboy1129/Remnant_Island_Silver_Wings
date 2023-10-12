@@ -17799,7 +17799,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1658092965108873638}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758890878}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeedbfe30d9b7bd439e0a1bdae3f4939, type: 3}
   m_Name: 
@@ -30112,7 +30112,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -30269,7 +30269,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 1
+    frequency: 0.5
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
