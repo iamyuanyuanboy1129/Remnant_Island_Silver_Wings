@@ -8,4 +8,8 @@ public class ParticleAttack : MonoBehaviour
     {
         print(other.name);
     }
+    private void OnParticleTrigger()
+    {
+        print("12345");
+    }
 }

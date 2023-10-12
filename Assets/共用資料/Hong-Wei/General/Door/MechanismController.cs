@@ -11,7 +11,10 @@ public class MechanismController : MonoBehaviour
 
     private bool canTurnOn = false;
 
-
+    private void Start()
+    {
+        mecha=GetComponentInParent<MechanismManager>();
+    }
 
     private void Update()
     {
