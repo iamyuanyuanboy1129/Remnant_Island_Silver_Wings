@@ -1,23 +1,57 @@
 ﻿using Fungus;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MechanismManager : MonoBehaviour
 {
-    public int[] mechanismsIndex= new int[4];
+    public List<int> mechanismsIndex= new List<int>();
+    [SerializeField,Header("開門密碼")]
+    private List<int> code;
+    [SerializeField, Header("要開啟的門")]
+    private GameObject door;
+    [SerializeField, Header("門移動的總時間"), Range(1f, 5f)]
+    private float duration = 3f;
+    [SerializeField, Header("門的偏移量"), Range(-5f, 5f)]
+    private float offset = 2;
 
-    
+    private Vector3 originalPosition;
+    private Vector3 targetPosition;
+
+
+    private void Start()
+    {
+        originalPosition = door.transform.position;
+        targetPosition = originalPosition + Vector3.up * offset;
+    }
 
     private void Update()
     {
-        /*if (mechanismsIndex.Length < 4)
+        if (mechanismsIndex.Count == 4)
         {
-            
+            if (Enumerable.SequenceEqual(mechanismsIndex,code))
+            {
+                Debug.Log("<color=red>密碼相符</color>");
+                StartCoroutine(MoveDoor());
+                mechanismsIndex.Clear();
+            }
+            else
+            {
+                Debug.Log("<color=red>密碼不相符</color>");
+                mechanismsIndex.Clear();
+            }
         }
-        else
-        {
+    }
 
-        }*/
+    private IEnumerator MoveDoor()
+    {
+        float timer = 0;
+        while (timer < duration)
+        {
+            door.transform.position = Vector3.Lerp(originalPosition, targetPosition, (timer / duration));
+            timer += Time.deltaTime;
+            yield return null;
+        }
     }
 }
