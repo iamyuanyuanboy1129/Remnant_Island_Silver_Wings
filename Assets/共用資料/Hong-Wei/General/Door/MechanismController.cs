@@ -19,7 +19,7 @@ public class MechanismController : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                if (mecha.mechanismsIndex[i] = null)
+                if (mecha.mechanismsIndex[i] == null)
                     mecha.mechanismsIndex[i] = number;
                 break;
 
