@@ -20,13 +20,7 @@ public class MechanismController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                if (mecha.mechanismsIndex[i] == null)
-                    mecha.mechanismsIndex[i] = number;
-                break;
-
-            }
+            mecha.mechanismsIndex.Add(number);
         }
     }
 

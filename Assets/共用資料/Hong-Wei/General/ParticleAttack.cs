@@ -1,15 +1,13 @@
-﻿using System.Collections;
+﻿using Fungus;
+using System.Collections;
 using System.Collections.Generic;
+using TwoD;
 using UnityEngine;
 
 public class ParticleAttack : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-        print(other.name);
-    }
-    private void OnParticleTrigger()
-    {
-        print("12345");
+        Debug.Log($"<color=red>{other.name}</color>");
     }
 }
