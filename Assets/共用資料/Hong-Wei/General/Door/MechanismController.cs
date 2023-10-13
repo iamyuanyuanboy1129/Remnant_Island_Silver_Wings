@@ -8,12 +8,14 @@ public class MechanismController : MonoBehaviour
     private int number;
 
     private MechanismManager mecha;
+    private BoxCollider2D box;
 
     private bool canTurnOn = false;
 
     private void Start()
     {
         mecha=GetComponentInParent<MechanismManager>();
+        box = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -21,6 +23,7 @@ public class MechanismController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
         {
             mecha.mechanismsIndex.Add(number);
+            box.enabled = false;
         }
     }
 
