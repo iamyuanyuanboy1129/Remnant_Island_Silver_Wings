@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AddItems_Palace : MonoBehaviour
 {
@@ -17,6 +15,7 @@ public class AddItems_Palace : MonoBehaviour
                 if (inventory.itemList[i] == null)
                 {
                     inventory.itemList[i] = spindle;
+                    spindle.itemHold = 1;
                     break;
                 }
             }
@@ -28,9 +27,11 @@ public class AddItems_Palace : MonoBehaviour
                 if (inventory.itemList[i] == null)
                 {
                     inventory.itemList[i] = scissor;
+                    scissor.itemHold = 1;
                     break;
                 }
             }
         }
+        InventoryManager.RefreshItem();
     }
 }
