@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -60,6 +61,27 @@ namespace TwoD
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
                 FlipToPlayer();
+            }
+            else
+            {
+                currentHealth = 0;
+                rig.velocity = Vector3.zero;
+                //觸發死亡
+                OnDie?.Invoke();
+            }
+
+            OnHealthChange?.Invoke(this);
+        }
+        public void TakeParticleDamage(float damage)
+        {
+            if (invulnerable)
+                return;
+
+            //Debug.Log(attacker.damage);
+            if (currentHealth - damage > 0)
+            {
+                currentHealth -= damage;
+                TriggerInvulnerable();
             }
             else
             {
