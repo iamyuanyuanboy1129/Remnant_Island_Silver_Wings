@@ -148,13 +148,6 @@ public class Player : MonoBehaviour
             ///恢復正常
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
-        //閃避系統
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            //rig.velocity = new Vector2(-direction * dodgeSpeed, jumpPower * 0.2f);
-            Vector2 dir = new Vector2( -direction * dodgeSpeed, jumpPower * 0.5f);
-            rig.AddForce(dir);
-        }
     }
     /// <summary>
     /// 判斷是否在地面，並且按空白鍵跳躍
