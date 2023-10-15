@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: Key
   itemImage: {fileID: -1826517228, guid: 93f68decf90ce9d4cb67d48f88547629, type: 3}
   itemHold: 1
-  itemInfo: This is key
+  itemInfo: "\u9019\u662F\u4E00\u628A\u9470\u5319"
   equip: 0

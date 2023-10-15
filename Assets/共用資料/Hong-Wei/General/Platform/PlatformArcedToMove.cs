@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.UIElements;
 
 public class PlatformArcedToMove : MonoBehaviour
 {
@@ -12,29 +13,44 @@ public class PlatformArcedToMove : MonoBehaviour
     [SerializeField, Header("移動速度")]
     private float speed = 2f;
     [SerializeField, Header("初始角度")]
-    private float angle = 0f;
+    private float degree = 0f;
 
     private float radius;
+    private float radian;
+    private float originalRadian;
+    private float endRadian;
 
 
     private void Start()
     {
         radius = Vector3.Distance(centerPoint, transform.position);
+        originalRadian = degree * Mathf.PI / 180f;
+        radian = originalRadian;
     }
 
     void Update()
     {
         if (isClockWise)
         {
-            angle -= speed * Time.deltaTime;
+            endRadian = (degree - 360) * Mathf.PI / 180;
+            if (radian > endRadian)
+            {
+                radian -= speed * Time.deltaTime;
+            }
+            else radian = originalRadian;
         }
         else
         {
-            angle += speed * Time.deltaTime;
+            endRadian = (degree + 360) * Mathf.PI / 180;
+            if (radian < endRadian)
+            {
+                radian += speed * Time.deltaTime;
+            }
+            else radian = originalRadian;
         }
 
-        float x = radius * Mathf.Cos(angle) + centerPoint.x;
-        float y = radius * Mathf.Sin(angle) + centerPoint.y;
+        float x = radius * Mathf.Cos(radian) + centerPoint.x;
+        float y = radius * Mathf.Sin(radian) + centerPoint.y;
 
         transform.position = new Vector3(x, y, 0f);
 
