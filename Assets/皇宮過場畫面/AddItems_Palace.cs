@@ -45,6 +45,18 @@ public class AddItems_Palace : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            for (int i = 0; i < inventory.itemList.Count; i++)
+            {
+                if (inventory.itemList[i].itemName == "高級回復藥")
+                {
+                    inventory.itemList[i] = healingPotion;
+                    healingPotion.itemHold = 5;
+                    break;
+                }
+            }
+        }
         InventoryManager.RefreshItem();
     }
 }
