@@ -8,7 +8,7 @@ namespace TwoD
         {
             if(PlayerPrefs.GetString("PositionSaved") != null)
             {
-                gameObject.transform.position = StringToV3(PlayerPrefs.GetString("PositionSaved"));
+                GameObject.FindGameObjectWithTag("Player").transform.position = StringToV3(PlayerPrefs.GetString("PositionSaved"));
             }
         }
         public Vector3 StringToV3(string posStr)
