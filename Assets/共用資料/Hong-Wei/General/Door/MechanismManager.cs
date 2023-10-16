@@ -40,6 +40,11 @@ public class MechanismManager : MonoBehaviour
             {
                 Debug.Log("<color=red>密碼不相符</color>");
                 mechanismsIndex.Clear();
+                BoxCollider2D[] boxColliders= GetComponentsInChildren<BoxCollider2D>();
+                foreach(var e in boxColliders)
+                {
+                    e.enabled = true;
+                }
             }
         }
     }
