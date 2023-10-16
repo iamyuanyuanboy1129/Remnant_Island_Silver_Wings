@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
+using TwoD;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -103,5 +104,17 @@ public class InventoryManager : MonoBehaviour
             }
         }
         return hasKey;
+    }
+
+    public static void UseItem(string useItemName)
+    {
+        switch (useItemName)
+        {
+            case "高級回復藥":
+                HealthSystem healthSystem;
+                healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
+                healthSystem.currentHealth += 50;
+                break;
+        }
     }
 }
