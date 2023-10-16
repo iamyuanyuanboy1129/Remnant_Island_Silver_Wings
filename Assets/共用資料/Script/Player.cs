@@ -148,6 +148,10 @@ public class Player : MonoBehaviour
             ///恢復正常
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            InventoryManager.UseItem("高級回復藥");
+        }
     }
     /// <summary>
     /// 判斷是否在地面，並且按空白鍵跳躍
