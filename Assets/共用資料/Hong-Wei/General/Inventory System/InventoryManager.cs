@@ -113,21 +113,16 @@ public class InventoryManager : MonoBehaviour
             case "高級回復藥":
                 for (int i = 0; i < instance.myBag.itemList.Count; i++)
                 {
-                    if (instance.myBag.itemList[i].itemName == "高級回復藥")
+                    if (instance.myBag.itemList[i].itemName == "高級回復藥" && instance.myBag.itemList[i].itemHold != 0)
                     {
-                        if (instance.myBag.itemList[i].itemHold != 0)
-                        {
-                            HealthSystem healthSystem;
-                            healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
-                            healthSystem.currentHealth += 50;
-                            if (healthSystem.currentHealth > healthSystem.maxHealth)
-                                healthSystem.currentHealth = 100;
-                            instance.myBag.itemList[i].itemHold--;
-                            RefreshItem();
-                            break;
-                        }
-                        else
-                            break;
+                        HealthSystem healthSystem;
+                        healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
+                        healthSystem.currentHealth += 50;
+                        if (healthSystem.currentHealth > healthSystem.maxHealth)
+                            healthSystem.currentHealth = 100;
+                        instance.myBag.itemList[i].itemHold--;
+                        RefreshItem();
+                        break;
                     }
                 }
                 break;
