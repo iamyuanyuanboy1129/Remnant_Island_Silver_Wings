@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72c0618733424441aceae7abd5e47b9, type: 3}
+  m_Name: Scissor
+  m_EditorClassIdentifier: 
+  itemName: "\u963F\u7279\u7F85\u6CE2\u7D72\u7684\u526A\u5200"
+  itemImage: {fileID: 21300000, guid: 5c45093f240e5a942811d6c43354cef4, type: 3}
+  itemHold: 1
+  itemInfo: "\u4E00\u628A\u9EC3\u91D1\u88FD\u7684\u526A\u5200\uFF0C\u5C1A\u4E0D\u77E5\u9053\u5B83\u7684\u78BA\u5207\u529F\u80FD\u3002"
+  equip: 0
