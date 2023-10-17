@@ -2,6 +2,7 @@
 using TMPro;
 using TwoD;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class InventoryManager : MonoBehaviour
     public TextMeshProUGUI itemInformation;
 
     public List<GameObject> slots = new List<GameObject>();
+
+    public HealthSystem healthSystem;
+    public UnityEvent<HealthSystem> OnHealthChange;
     private void Awake()
     {
         if (instance != null)
@@ -21,6 +25,7 @@ public class InventoryManager : MonoBehaviour
             Destroy(this);
         }
         instance = this;
+        healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
     }
     private void OnEnable()
     {
@@ -120,6 +125,7 @@ public class InventoryManager : MonoBehaviour
                         if (healthSystem.currentHealth > healthSystem.maxHealth)
                             healthSystem.currentHealth = 100;
                         instance.myBag.itemList[i].itemHold--;
+                        healthSystem.OnHealthChange?.Invoke(healthSystem);
                         RefreshItem();
                         break;
                     }
