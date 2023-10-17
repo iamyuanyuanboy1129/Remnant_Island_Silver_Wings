@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Cinemachine;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace TwoD
@@ -23,6 +24,8 @@ namespace TwoD
         private Transform player;
         private GameObject gameObject;
 
+        private CinemachineImpulseSource impulseSource;
+
         private void Start()
         {
             currentHealth = maxHealth;
@@ -31,6 +34,7 @@ namespace TwoD
             rig = GetComponent<Rigidbody2D>();
             player = GameObject.Find("Player_Idle").transform;
             gameObject = GameObject.Find(this.name);
+            impulseSource = FindObjectOfType<CinemachineImpulseSource>();
         }
 
         private void Update()
@@ -54,6 +58,7 @@ namespace TwoD
             if (currentHealth - attacker.damage > 0)
             {
                 currentHealth -= attacker.damage;
+                impulseSource.GenerateImpulse();
                 TriggerInvulnerable();
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
