@@ -43140,6 +43140,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4610295659066118233, guid: 555d0cc3c947d8f438dd8f06b38efe00, type: 3}
+      propertyPath: jumpPower
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4783555215566733931, guid: 555d0cc3c947d8f438dd8f06b38efe00, type: 3}
       propertyPath: m_RootOrder
       value: 1
