@@ -13,6 +13,9 @@ namespace TwoD
         private float timeAttackEnd = 1.7f;
         [SerializeField, Header("追蹤狀態")]
         private StateTrack stateTrack;
+        [SerializeField, Header("攻擊速度"), Range(1, 3)]
+        public float aniSpeed = 1.5f;
+
 
         private string parAttack = "觸發攻擊";
         private float timer;
@@ -24,7 +27,7 @@ namespace TwoD
             {
                 ani.SetTrigger(parAttack);
                 if( this.name == "Enemy_Boss")
-                    ani.speed = 3;
+                    ani.speed = aniSpeed;
             }
             else
             {

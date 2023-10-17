@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1375015573}
+  selectedFlowchart: {fileID: 223851973}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -761,17 +761,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5127590848898710373, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
+      propertyPath: attackSize.x
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127590848898710373, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
+      propertyPath: attackOffset.x
+      value: 0.72
+      objectReference: {fileID: 0}
     - target: {fileID: 5864124368854552102, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
       propertyPath: damage
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6859948187499587401, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
       propertyPath: m_Name
       value: Enemy_Boss
       objectReference: {fileID: 0}
     - target: {fileID: 7885543429754737068, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
+      propertyPath: aniSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885543429754737068, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
       propertyPath: timeAttackEnd
-      value: 0.5
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7885543429754737068, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
       propertyPath: timeSendAttackCheck
@@ -2390,6 +2402,7 @@ GameObject:
   - component: {fileID: 223851980}
   - component: {fileID: 223851982}
   - component: {fileID: 223851983}
+  - component: {fileID: 223851984}
   m_Layer: 0
   m_Name: "\u6559\u5B78\u5C0D\u8A71"
   m_TagString: Untagged
@@ -2413,7 +2426,7 @@ MonoBehaviour:
   scrollPos: {x: -3.5, y: 76.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 579
+  blockViewHeight: 200
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -2424,7 +2437,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 223851974}
   selectedCommands:
-  - {fileID: 223851982}
+  - {fileID: 223851983}
   variables: []
   description: 
   stepPause: 0
@@ -2462,6 +2475,7 @@ MonoBehaviour:
   eventHandler: {fileID: 223851975}
   commandList:
   - {fileID: 223851983}
+  - {fileID: 223851984}
   - {fileID: 223851982}
   - {fileID: 223851981}
   - {fileID: 223851980}
@@ -2674,12 +2688,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  duration: 1
+  duration: 0.5
   targetAlpha: 0
   waitUntilFinished: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTexture: {fileID: 0}
   fadeTweenType: 4
+--- !u!114 &223851984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223851972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d9ff288f3904c05ada7ac9c9a075bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 8
+  indentLevel: 0
+  description: 
+  delay: 0
+  invokeType: 0
+  staticEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 758890884}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  booleanParameter:
+    booleanRef: {fileID: 0}
+    booleanVal: 0
+  booleanEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  integerParameter:
+    integerRef: {fileID: 0}
+    integerVal: 0
+  integerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  floatParameter:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  floatEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  stringParameter:
+    stringRef: {fileID: 0}
+    stringVal: 
+  stringEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &226109262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 662194080356567718, guid: 366bd147d3b568843ab9463d10b7fb98, type: 3}
@@ -17963,7 +18033,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   booleanParameter:
     booleanRef: {fileID: 0}
@@ -18048,7 +18118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 88
+    x: 86.96907
     y: 153
     width: 99.484535
     height: 40
@@ -18059,8 +18129,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 760141393}
   commandList:
-  - {fileID: 760141402}
   - {fileID: 760141403}
+  - {fileID: 760141402}
   - {fileID: 760141390}
   - {fileID: 760141392}
   - {fileID: 760141400}
@@ -18101,7 +18171,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 760141394}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 760141402}
   variables: []
   description: 
   stepPause: 0
@@ -25823,7 +25894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4318630c87e98ba419366747f8e3ce7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: "\u5834\u666F\u65BD\u5DE5\u4E2D"
+  nextSceneName: "\u7687\u5BAE"
 --- !u!1 &1175666212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27536,7 +27607,8 @@ MonoBehaviour:
     height: 0
   selectedBlocks:
   - {fileID: 1375015572}
-  selectedCommands: []
+  selectedCommands:
+  - {fileID: 1375015576}
   variables: []
   description: 
   stepPause: 0
@@ -33781,7 +33853,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   booleanParameter:
     booleanRef: {fileID: 0}
@@ -33939,8 +34011,10 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1500024740}
+  selectedCommands:
+  - {fileID: 1500024749}
   variables: []
   description: 
   stepPause: 0
@@ -43062,6 +43136,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4001307764483825387, guid: 555d0cc3c947d8f438dd8f06b38efe00, type: 3}
+      propertyPath: m_GravityScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4783555215566733931, guid: 555d0cc3c947d8f438dd8f06b38efe00, type: 3}
       propertyPath: m_RootOrder
       value: 1
