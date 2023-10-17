@@ -58,7 +58,10 @@ namespace TwoD
             if (currentHealth - attacker.damage > 0)
             {
                 currentHealth -= attacker.damage;
-                impulseSource.GenerateImpulse();
+                if (!gameObject.CompareTag("Player"))
+                {
+                    impulseSource.GenerateImpulse();
+                }
                 TriggerInvulnerable();
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
@@ -112,7 +115,7 @@ namespace TwoD
         /// </summary>
         private void FlipToPlayer()
         {
-            if(player.transform.position.x < transform.position.x)
+            if (player.transform.position.x < transform.position.x)
             {
                 gameObject.GetComponent<StateWander>().direction = -1;
                 transform.eulerAngles = new Vector3(0, 180, 0);

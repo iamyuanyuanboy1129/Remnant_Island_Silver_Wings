@@ -8,6 +8,7 @@ TagManager:
   - Audio
   - OneWayPlatform
   - FireBall
+  - Enemy
   layers:
   - Default
   - TransparentFX
