@@ -169,7 +169,8 @@ public class Player : MonoBehaviour
     {
         if (CheckGround() && Input.GetKeyDown(KeyCode.Space))
         {
-            rig.AddForce(new Vector2(0, jumpPower));
+            //rig.AddForce(new Vector2(0, jumpPower));
+            rig.velocity = new Vector2(rig.velocity.x, jumpPower);
             isJumping = true;
             jumpCounter = 0;
         }
@@ -193,6 +194,12 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+            jumpCounter = 0;
+
+            if (rig.velocity.y > 0)
+            {
+                rig.velocity = new Vector2(rig.velocity.x, rig.velocity.y * 0.6f);
+            }
         }
 
         if (rig.velocity.y < 0)
