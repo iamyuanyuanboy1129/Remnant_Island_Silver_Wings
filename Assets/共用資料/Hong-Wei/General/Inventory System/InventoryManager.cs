@@ -2,7 +2,6 @@
 using TMPro;
 using TwoD;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InventoryManager : MonoBehaviour
 {
