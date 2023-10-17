@@ -198,6 +198,10 @@ MonoBehaviour:
   emptySlot: {fileID: 7529857917674510111, guid: f0ad748c0833710499c9180f5acac1a1, type: 3}
   itemInformation: {fileID: 37049112}
   slots: []
+  healthSystem: {fileID: 0}
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &15906863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18012,7 +18016,7 @@ MonoBehaviour:
   itemId: 3
   indentLevel: 0
   description: 
-  delay: 0.5
+  delay: 0
   invokeType: 0
   staticEvent:
     m_PersistentCalls:
@@ -18166,7 +18170,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 760141394}
   selectedCommands:
-  - {fileID: 760141402}
+  - {fileID: 760141390}
   variables: []
   description: 
   stepPause: 0
