@@ -13,8 +13,14 @@ public class Player : MonoBehaviour
     private Vector3 v3CheckGroundOffset = Vector3.zero;
     [SerializeField, Header("要偵測地板的圖層")]
     private LayerMask layerCheckGround;
-    [SerializeField, Header("跳躍力道"), Range(0, 800)]
-    private float jumpPower = 500;
+    [SerializeField, Header("跳躍力道"), Range(0, 20)]
+    private float jumpPower = 10;
+    [SerializeField, Header("落下增幅")]
+    private float fallMultiplier;
+    [SerializeField, Header("跳躍增幅")]
+    private float jumpMultiplier;
+    [SerializeField, Header("跳躍時間")]
+    private float jumpTime;
     [SerializeField, Header("是否能夠水平移動")]
     public bool movementEnable = true;
     [SerializeField, Header("是否能夠躲藏")]
@@ -33,8 +39,10 @@ public class Player : MonoBehaviour
     public int gold = 0;
 
     public Quest quest;
-
     public GameObject player;
+    private Vector2 vecGravity;
+    private bool isJumping;
+    private float jumpCounter;
 
     [SerializeField, Header("受傷反彈力"), Range(0, 10)]
     public float hurtForce;
@@ -72,6 +80,7 @@ public class Player : MonoBehaviour
         //print("<color=yellow>喚醒事件</color>")
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        vecGravity = new Vector2(0, -Physics2D.gravity.y);
     }
 
     public void Start()
@@ -126,7 +135,7 @@ public class Player : MonoBehaviour
             ani.SetBool(parRun, h != 0);
         }
         //躲藏系統
-        if ((Input.GetKeyDown(KeyCode.UpArrow) && canHide)|| (Input.GetKeyDown(KeyCode.W) && canHide))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) && canHide) || (Input.GetKeyDown(KeyCode.W) && canHide))
         {
             movementEnable = false;
             rig.velocity = Vector3.zero;
@@ -161,6 +170,34 @@ public class Player : MonoBehaviour
         if (CheckGround() && Input.GetKeyDown(KeyCode.Space))
         {
             rig.AddForce(new Vector2(0, jumpPower));
+            isJumping = true;
+            jumpCounter = 0;
+        }
+
+        if (rig.velocity.y > 0 && isJumping)
+        {
+            jumpCounter += Time.deltaTime;
+            if (jumpCounter > jumpTime) isJumping = false;
+
+            float t = jumpCounter / jumpTime;
+            float currentjumpM = jumpMultiplier;
+
+            if (t > 0.5f)
+            {
+                currentjumpM = jumpMultiplier * (1 - t);
+            }
+
+            rig.velocity += vecGravity * jumpMultiplier * Time.deltaTime;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
+
+        if (rig.velocity.y < 0)
+        {
+            rig.velocity -= vecGravity * fallMultiplier * Time.deltaTime;
         }
     }
     /// <summary>
