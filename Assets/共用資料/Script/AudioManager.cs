@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip buttonClick;
     public AudioClip attackSound;
+    public AudioClip correct;
+    public AudioClip mistake;
 
     private void Start()
     {
