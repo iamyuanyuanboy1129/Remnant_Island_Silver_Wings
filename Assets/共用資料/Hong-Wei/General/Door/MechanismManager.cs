@@ -19,6 +19,12 @@ public class MechanismManager : MonoBehaviour
     private Vector3 originalPosition;
     private Vector3 targetPosition;
 
+    private AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -33,12 +39,14 @@ public class MechanismManager : MonoBehaviour
             if (Enumerable.SequenceEqual(mechanismsIndex,code))
             {
                 Debug.Log("<color=red>密碼相符</color>");
+                audioManager.PlaySFX(audioManager.correct);
                 StartCoroutine(MoveDoor());
                 mechanismsIndex.Clear();
             }
             else
             {
                 Debug.Log("<color=red>密碼不相符</color>");
+                audioManager.PlaySFX(audioManager.mistake);
                 mechanismsIndex.Clear();
                 BoxCollider2D[] boxColliders= GetComponentsInChildren<BoxCollider2D>();
                 foreach(var e in boxColliders)

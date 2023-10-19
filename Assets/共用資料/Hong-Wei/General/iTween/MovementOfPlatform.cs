@@ -13,7 +13,7 @@ public class MovementOfPlatform : MonoBehaviour
 
     private void Start()
     {
-        iTween.MoveBy(gameObject, iTween.Hash("amount", offset, "time", duration, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", delayTime));
+        iTween.MoveBy(gameObject, iTween.Hash("amount", offset, "time", duration, "easeType", "easeInOutSine", "loopType", "pingPong", "delay", delayTime));
     }
 
     private void OnDrawGizmos()
