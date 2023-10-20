@@ -188,7 +188,7 @@ public class Player : MonoBehaviour
                 currentjumpM = jumpMultiplier * (1 - t);
             }
 
-            rig.velocity += vecGravity * jumpMultiplier * Time.deltaTime;
+            rig.velocity += vecGravity * currentjumpM * Time.deltaTime;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
