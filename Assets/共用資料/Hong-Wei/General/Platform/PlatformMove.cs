@@ -21,8 +21,7 @@ public class PlatformMove : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             var target = collision.gameObject.transform;
-            var original = target.GetComponent<TransformState>().OriginalParent;
-            target.SetParent(original);
+            target.SetParent(null);
         }
     }
 }
