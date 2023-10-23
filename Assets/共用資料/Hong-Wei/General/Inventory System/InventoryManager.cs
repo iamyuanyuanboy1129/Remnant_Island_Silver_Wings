@@ -14,6 +14,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject emptySlot;
     public TextMeshProUGUI itemInformation;
 
+    public GameObject equipGrid;
+
     public List<GameObject> slots = new List<GameObject>();
 
     public HealthSystem healthSystem;
@@ -55,12 +57,27 @@ public class InventoryManager : MonoBehaviour
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
             instance.slots.Clear();
         }
+        for (int i = 0; i < instance.equipGrid.transform.childCount; i++)
+        {
+            if (instance.equipGrid.transform.childCount == 0)
+                break;
+            Destroy(instance.equipGrid.transform.GetChild(i).gameObject);
+            instance.slots.Clear();
+        }
         //重新生成對應myBag裡面的物品的slot
-        for (int i = 0; i < instance.myBag.itemList.Count; i++)
+        for (int i = 0; i < 20; i++)
         {
             //CreateNewItem(instance.myBag.itemList[i]);
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            instance.slots[i].GetComponent<Slot>().slotID = i;
+            instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
+            instance.slots[i].transform.localScale = Vector3.one;
+        }
+        for (int i = 20; i <= 21; i++)
+        {
+            instance.slots.Add(Instantiate(instance.emptySlot));
+            instance.slots[i].transform.SetParent(instance.equipGrid.transform);
             instance.slots[i].GetComponent<Slot>().slotID = i;
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
             instance.slots[i].transform.localScale = Vector3.one;
