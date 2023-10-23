@@ -16,6 +16,8 @@ public class Slot : MonoBehaviour
     public void ItemOnClicked()
     {
         InventoryManager.UpdateItemInfo(slotInfo);
+        PlayerPrefs.SetInt("ItemSelected", slotID);
+        print(slotID);
     }
     public void SetupSlot(Item item)
     {
