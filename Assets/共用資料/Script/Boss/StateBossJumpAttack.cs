@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using UnityEngine;
 
 namespace TwoD
@@ -13,10 +14,12 @@ namespace TwoD
 
         public StateBossTrack bossTrack;
 
+        private CinemachineImpulseSource impulseSource;
         private Rigidbody2D rig;
         private void Start()
         {
             rig = GetComponent<Rigidbody2D>();
+            impulseSource = FindObjectOfType<CinemachineImpulseSource>();
         }
         public override State RunCurrentState()
         {
@@ -27,6 +30,12 @@ namespace TwoD
         {
             rig.AddForce(new Vector2(jumpForceX * bossTrack.direction, jumpForceY));
             ani.SetTrigger("觸發跳躍攻擊");
+            StartCoroutine(WaitForImpulse());
+        }
+        IEnumerator WaitForImpulse()
+        {
+            yield return new WaitForSeconds(0.6f);
+            impulseSource.GenerateImpulse();
         }
     }
 }
