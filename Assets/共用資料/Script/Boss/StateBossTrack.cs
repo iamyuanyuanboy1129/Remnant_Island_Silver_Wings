@@ -26,6 +26,7 @@ namespace TwoD
         public int direction = 1;
         public bool canJumpAtk = true;
         public bool canCloseAtk = true;
+        private bool jumpTrigger = false;
         public float timer = 0;
 
         private string parWalk = "開關走路";
@@ -80,8 +81,9 @@ namespace TwoD
                 canJumpAtk = true;
                 timer = 0;
             }
-            if (timer >= closeAtkTriggerTime)
+            if (timer >= closeAtkTriggerTime && jumpTrigger)
             {
+                jumpTrigger = false;
                 canCloseAtk = true;
             }
         }
@@ -91,6 +93,8 @@ namespace TwoD
             {
                 if (TriggerJumpAttack() && canJumpAtk)
                 {
+                    timer = 0;
+                    jumpTrigger = true;
                     canJumpAtk = false;
                     canCloseAtk = false;
                     return jumpAttack;
