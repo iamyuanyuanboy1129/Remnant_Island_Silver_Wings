@@ -57,13 +57,13 @@ namespace TwoD
 
         private void OnDrawGizmos()
         {
-            Gizmos.color = new Color(1, 1f, 0f, 0.5f);
+            Gizmos.color = new Color(1, 1f, 0f, 0.1f);
             Gizmos.DrawCube(pointOriginal + transform.TransformDirection(trackOffset), trackSize);
 
-            Gizmos.color = new Color(1, 0f, 0f, 0.7f);
+            Gizmos.color = new Color(1, 0f, 0f, 0.3f);
             Gizmos.DrawCube(transform.position + transform.TransformDirection(jumpAtkOffset), jumpAtkSize);
 
-            Gizmos.color = new Color(1, 0f, 1f, 0.8f);
+            Gizmos.color = new Color(1, 0f, 1f, 0.3f);
             Gizmos.DrawCube(transform.position + transform.TransformDirection(nearAtkOffset), nearAtkSize);
         }
         private void Start()

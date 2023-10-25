@@ -15,13 +15,23 @@ namespace TwoD
         private string parHardAtk = "觸發重攻擊";
         private float rdt = 0;
         private float timer = 0;
+        private float blockChance = 0;
 
         public StateBossTrack bossTrack;
+        public StateBossBlock bossBlock;
 
         public override State RunCurrentState()
         {
             ani.SetBool("開關走路", false);
             ani.SetBool("開關跑步", false);
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                blockChance = Random.Range(0, 11);
+                if (blockChance > 8)
+                {
+                    return bossBlock;
+                }
+            }
             if (bossTrack.TriggerCloseAttack() && timer == 0)
             {
                 atkType = Random.Range( 0, 10);
