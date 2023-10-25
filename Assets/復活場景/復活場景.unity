@@ -1142,7 +1142,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011783481, y: -0.42120287}
+  m_Offset: {x: -0.011783481, y: -0.3917695}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1153,7 +1153,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6181705, y: 2.6582885}
+  m_Size: {x: 2.6181705, y: 2.5994217}
   m_EdgeRadius: 0
 --- !u!50 &250087273
 Rigidbody2D:
@@ -1171,7 +1171,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 70af54d6f743b654cae3b21f04dd886a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1290,7 +1290,11 @@ MonoBehaviour:
   walkSpeed: 1.5
   runSpeed: 3.5
   cdJumpAtk: 10
+  closeAtkTriggerTime: 3
   direction: 1
+  canJumpAtk: 1
+  canCloseAtk: 1
+  timer: 0
   trackSize: {x: 13, y: 5.18, z: 1}
   trackOffset: {x: 0, y: -0.33, z: 0}
   jumpAtkSize: {x: 1.83, y: 2.73, z: 1}
@@ -1371,6 +1375,7 @@ MonoBehaviour:
   <layerTarget>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
+  atkCDTime: 5
   bossTrack: {fileID: 250087277}
 --- !u!1 &250542169
 GameObject:
