@@ -65,7 +65,9 @@ namespace TwoD
                 TriggerInvulnerable();
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
-                FlipToPlayer();
+                string getGOName = gameObject.name;
+                if (getGOName != "BossGolem")
+                    FlipToPlayer();
             }
             else
             {
