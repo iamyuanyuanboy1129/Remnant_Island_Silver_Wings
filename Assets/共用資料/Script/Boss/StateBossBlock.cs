@@ -18,6 +18,9 @@ namespace TwoD
         public override State RunCurrentState()
         {
             ani.SetBool(parBlock, true);
+            /*ani.ResetTrigger("觸發輕攻");
+            ani.ResetTrigger("觸發重攻");
+            ani.ResetTrigger("觸發續力");*/
             healthSystem.invulnerable = true;
             rdt = Random.Range(5, 16);
             StartCoroutine(BlockTime(rdt / 10));
