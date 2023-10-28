@@ -28,6 +28,7 @@ namespace TwoD
         public bool canCloseAtk = true;
         private bool jumpTrigger = false;
         public float timer = 0;
+        public bool canMove = true;
 
         private string parWalk = "開關走路";
         private string parRun = "開關跑步";
@@ -101,15 +102,16 @@ namespace TwoD
                 }
                 if (TriggerCloseAttack() && canCloseAtk)
                 {
+                    canMove = false;
                     return closeAttack;
                 }
-                if ((healthSystem.currentHealth/healthSystem.maxHealth) > 0.5f)
+                if ((healthSystem.currentHealth/healthSystem.maxHealth) > 0.5f && canMove)
                 {
                     ani.SetBool(parWalk, true);
                     FlipToPlayer();
                     rig.velocity = new Vector2(direction * walkSpeed, rig.velocity.y);
                 }
-                else
+                else if((healthSystem.currentHealth / healthSystem.maxHealth) <= 0.5f && canMove)
                 {
                     ani.SetBool(parRun, true);
                     FlipToPlayer();

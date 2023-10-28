@@ -51,6 +51,7 @@ namespace TwoD
             else if(timer >= atkCDTime)
             {
                 timer = 0;
+                bossTrack.canMove = true;
                 return bossTrack;
             }
             timer += Time.deltaTime;

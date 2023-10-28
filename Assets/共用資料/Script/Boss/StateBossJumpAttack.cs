@@ -28,6 +28,7 @@ namespace TwoD
         }
         private void JumpAttack()
         {
+            //bossTrack.canMove = false;
             rig.AddForce(new Vector2(jumpForceX * bossTrack.direction, jumpForceY));
             ani.SetTrigger("觸發跳躍攻擊");
             StartCoroutine(WaitForImpulse());
@@ -36,6 +37,7 @@ namespace TwoD
         {
             yield return new WaitForSeconds(0.6f);
             impulseSource.GenerateImpulse();
+            //bossTrack.canMove = true;
         }
     }
 }
