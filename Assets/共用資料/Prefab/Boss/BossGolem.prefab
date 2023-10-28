@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 0
-  invulnerableDuration: 0
+  invulnerableDuration: 0.1
   invulnerableCounter: 0
   invulnerable: 0
   OnHealthChange:
@@ -369,6 +369,7 @@ MonoBehaviour:
   canJumpAtk: 1
   canCloseAtk: 1
   timer: 0
+  canMove: 1
   trackSize: {x: 13, y: 5.18, z: 1}
   trackOffset: {x: 0, y: -0.33, z: 0}
   jumpAtkSize: {x: 1.83, y: 2.73, z: 1}
