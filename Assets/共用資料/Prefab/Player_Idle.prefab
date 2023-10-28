@@ -363,7 +363,10 @@ MonoBehaviour:
   layerCheckGround:
     serializedVersion: 2
     m_Bits: 64
-  jumpPower: 400
+  jumpPower: 20
+  fallMultiplier: 0
+  jumpMultiplier: 0
+  jumpTime: 0
   movementEnable: 1
   canHide: 0
   dodgeSpeed: 2000
