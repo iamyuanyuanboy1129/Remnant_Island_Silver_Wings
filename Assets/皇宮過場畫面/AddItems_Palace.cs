@@ -1,62 +1,65 @@
 ﻿using UnityEngine;
-
-public class AddItems_Palace : MonoBehaviour
+namespace TwoD
 {
-    public Item spindle;
-    public Item scissor;
-    public Item healingPotion;
-    public Inventory inventory;
-
-    public void AddItemsPalace()
+    public class AddItems_Palace : MonoBehaviour
     {
-        if (!inventory.itemList.Contains(spindle))
+        public Item spindle;
+        public Item scissor;
+        public Item healingPotion;
+        public Inventory inventory;
+
+        public void AddItemsPalace()
         {
-            for (int i = 0; i < inventory.itemList.Count; i++)
+            if (!inventory.itemList.Contains(spindle))
             {
-                if (inventory.itemList[i] == null)
+                for (int i = 0; i < inventory.itemList.Count; i++)
                 {
-                    inventory.itemList[i] = spindle;
-                    spindle.itemHold = 1;
-                    break;
+                    if (inventory.itemList[i] == null)
+                    {
+                        inventory.itemList[i] = spindle;
+                        spindle.itemHold = 1;
+                        break;
+                    }
                 }
             }
-        }
-        if (!inventory.itemList.Contains(scissor))
-        {
-            for (int i = 0; i < inventory.itemList.Count; i++)
+            if (!inventory.itemList.Contains(scissor))
             {
-                if (inventory.itemList[i] == null)
+                for (int i = 0; i < inventory.itemList.Count; i++)
                 {
-                    inventory.itemList[i] = scissor;
-                    scissor.itemHold = 1;
-                    break;
+                    if (inventory.itemList[i] == null)
+                    {
+                        inventory.itemList[i] = scissor;
+                        scissor.itemHold = 1;
+                        break;
+                    }
                 }
             }
-        }
-        if (!inventory.itemList.Contains(healingPotion))
-        {
-            for (int i = 0; i < inventory.itemList.Count; i++)
+            if (!inventory.itemList.Contains(healingPotion))
             {
-                if (inventory.itemList[i] == null)
+                for (int i = 0; i < inventory.itemList.Count; i++)
                 {
-                    inventory.itemList[i] = healingPotion;
-                    healingPotion.itemHold = 5;
-                    break;
+                    if (inventory.itemList[i] == null)
+                    {
+                        inventory.itemList[i] = healingPotion;
+                        healingPotion.itemHold = 5;
+                        break;
+                    }
                 }
             }
-        }
-        else
-        {
-            for (int i = 0; i < inventory.itemList.Count; i++)
+            else
             {
-                if (inventory.itemList[i].itemName == "高級回復藥")
+                for (int i = 0; i < inventory.itemList.Count; i++)
                 {
-                    inventory.itemList[i] = healingPotion;
-                    healingPotion.itemHold = 5;
-                    break;
+                    if (inventory.itemList[i].itemName == "高級回復藥")
+                    {
+                        inventory.itemList[i] = healingPotion;
+                        healingPotion.itemHold = 5;
+                        break;
+                    }
                 }
             }
+            //InventoryManager.RefreshItem();
         }
-        InventoryManager.RefreshItem();
     }
+
 }
