@@ -16,7 +16,7 @@ namespace TwoD
         private float rdt = 0;
         private float timer = 0;
         private float blockChance = 0;
-        private bool canBlock = true;
+        public bool canBlock = true;
 
         public bool isAttack = false;
 
@@ -25,6 +25,7 @@ namespace TwoD
 
         public override State RunCurrentState()
         {
+            //print("攻擊狀態");
             ani.SetBool("開關走路", false);
             ani.SetBool("開關跑步", false);
             if (Input.GetKeyDown(KeyCode.V) && canBlock)
@@ -32,12 +33,13 @@ namespace TwoD
                 blockChance = Random.Range(0, 11);
                 if (blockChance > 8)
                 {
+                    canBlock = false;
                     return bossBlock;
                 }
             }
             if (bossTrack.TriggerCloseAttack() && timer == 0)
             {
-                atkType = Random.Range( 0, 10);
+                atkType = Random.Range(0, 10);
                 //print(atkType);
                 if (atkType < 7)
                 {
@@ -51,10 +53,10 @@ namespace TwoD
                     ani.SetTrigger(parCharge);
                     rdt = Random.Range(7, 13);
                     //print(rdt);
-                    StartCoroutine(WaitRandomTime(rdt/10));
+                    StartCoroutine(WaitRandomTime(rdt / 10));
                 }
             }
-            else if(timer >= atkCDTime)
+            else if (timer >= atkCDTime)
             {
                 timer = 0;
                 canBlock = true;
