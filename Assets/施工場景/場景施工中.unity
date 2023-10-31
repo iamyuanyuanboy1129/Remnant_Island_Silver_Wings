@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u5834\u666F\u65BD\u5DE5\u4E2D\uFF0C\u611F\u8B1D\u60A8\u7684\u904A\u73A9\uFF01"
+  m_text: "\u5C45\u7136\u628A\u738B\u6253\u6B7B\u4E86\uFF0C\u771F\u53B2\u5BB3\uFF01\n\u611F\u8B1D\u904A\u73A9\uFF01"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6296b19a412b3dc45970f5e8be29c473, type: 2}
   m_sharedMaterial: {fileID: 6361080764776378457, guid: 6296b19a412b3dc45970f5e8be29c473, type: 2}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
