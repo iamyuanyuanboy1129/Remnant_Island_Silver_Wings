@@ -16,6 +16,7 @@ namespace TwoD
         private float rdt = 0;
         private float timer = 0;
         private float blockChance = 0;
+        private bool canBlock = true;
 
         public StateBossTrack bossTrack;
         public StateBossBlock bossBlock;
@@ -24,7 +25,7 @@ namespace TwoD
         {
             ani.SetBool("開關走路", false);
             ani.SetBool("開關跑步", false);
-            if (Input.GetKeyDown(KeyCode.V))
+            if (Input.GetKeyDown(KeyCode.V) && canBlock)
             {
                 blockChance = Random.Range(0, 11);
                 if (blockChance > 8)
@@ -42,6 +43,7 @@ namespace TwoD
                 }
                 else
                 {
+                    canBlock = false;
                     ani.SetTrigger(parCharge);
                     rdt = Random.Range(5, 10);
                     //print(rdt);
@@ -61,6 +63,7 @@ namespace TwoD
         {
             yield return new WaitForSeconds(rt);
             ani.SetTrigger(parHardAtk);
+            canBlock = true;
             //print("atkTrigger!");
         }
     }
