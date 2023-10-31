@@ -6,8 +6,9 @@ namespace TwoD
     {
         public void SetPlayerPos()
         {
-            if(PlayerPrefs.GetString("PositionSaved") != null)
+            if(PlayerPrefs.GetString("PositionSaved") != "")
             {
+                print(PlayerPrefs.GetString("PositionSaved"));
                 GameObject.FindGameObjectWithTag("Player").transform.position = StringToV3(PlayerPrefs.GetString("PositionSaved"));
             }
         }

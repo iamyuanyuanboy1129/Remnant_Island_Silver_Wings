@@ -37,7 +37,7 @@ namespace TwoD
             {
                 atkType = Random.Range( 0, 10);
                 //print(atkType);
-                if (atkType < 7)
+                if (atkType < 0)
                 {
                     ani.SetTrigger(parLitAtk);
                 }
@@ -53,6 +53,7 @@ namespace TwoD
             else if(timer >= atkCDTime)
             {
                 timer = 0;
+                canBlock = true;
                 bossTrack.canMove = true;
                 return bossTrack;
             }
@@ -63,7 +64,6 @@ namespace TwoD
         {
             yield return new WaitForSeconds(rt);
             ani.SetTrigger(parHardAtk);
-            canBlock = true;
             //print("atkTrigger!");
         }
     }
