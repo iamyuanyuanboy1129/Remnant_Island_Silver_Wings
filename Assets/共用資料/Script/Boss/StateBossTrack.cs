@@ -90,6 +90,7 @@ namespace TwoD
         }
         public override State RunCurrentState()
         {
+            //print("追蹤狀態");
             if (TrackTarget())
             {
                 if (TriggerJumpAttack() && canJumpAtk)
