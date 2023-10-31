@@ -76,7 +76,7 @@ namespace TwoD
         private void Update()
         {
             timer += Time.deltaTime;
-            print(timer);
+            //print(timer);
             if (timer >= cdJumpAtk)
             {
                 canJumpAtk = true;
