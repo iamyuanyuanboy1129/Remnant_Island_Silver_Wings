@@ -18,6 +18,8 @@ namespace TwoD
         private float blockChance = 0;
         private bool canBlock = true;
 
+        public bool isAttack = false;
+
         public StateBossTrack bossTrack;
         public StateBossBlock bossBlock;
 
@@ -37,15 +39,17 @@ namespace TwoD
             {
                 atkType = Random.Range( 0, 10);
                 //print(atkType);
-                if (atkType < 0)
+                if (atkType < 7)
                 {
                     ani.SetTrigger(parLitAtk);
+                    isAttack = true;
                 }
                 else
                 {
                     canBlock = false;
+                    isAttack = true;
                     ani.SetTrigger(parCharge);
-                    rdt = Random.Range(5, 10);
+                    rdt = Random.Range(7, 13);
                     //print(rdt);
                     StartCoroutine(WaitRandomTime(rdt/10));
                 }
@@ -54,6 +58,7 @@ namespace TwoD
             {
                 timer = 0;
                 canBlock = true;
+                isAttack = false;
                 bossTrack.canMove = true;
                 return bossTrack;
             }

@@ -10,6 +10,8 @@ namespace TwoD
         [SerializeField, Header("預設狀態")]
         private State stateDefault;
 
+        private bool isAttack;
+
         private Animator ani;
         private void Awake()
         {
@@ -31,7 +33,18 @@ namespace TwoD
         }
         public void EnemyHurt()
         {
-            ani.SetTrigger("觸發受傷");
+            if (gameObject.CompareTag("Boss"))
+            {
+                isAttack = GetComponent<StateBossCloseAttack>().isAttack;
+                if (!isAttack)
+                {
+                    ani.SetTrigger("觸發受傷");
+                }
+            }
+            else
+            {
+                ani.SetTrigger("觸發受傷");
+            }
         }
         public void EnemyDead()
         {
