@@ -10,6 +10,7 @@ TagManager:
   - FireBall
   - Enemy
   - Interactable
+  - Boss
   layers:
   - Default
   - TransparentFX
