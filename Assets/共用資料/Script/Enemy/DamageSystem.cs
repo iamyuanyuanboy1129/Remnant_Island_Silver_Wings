@@ -23,7 +23,8 @@ namespace TwoD
         private void OnTriggerStay2D(Collider2D other)
         {
             other.GetComponent<HealthSystem>()?.TakeDamage(this);
-            print(gameObject.name + "造成傷害");
+            //print(gameObject.name + "造成傷害");
+            //print(other.name);
         }
     }
 }   
