@@ -28,6 +28,7 @@ namespace TwoD
         private void Awake()
         {
             GetUIObject();
+            GetInputFieldData();
         }
 
         private void Start()
@@ -40,10 +41,20 @@ namespace TwoD
         {
             if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
             {
-                
-                //StartCoroutine(MoveDoor());
+                //passwordFiel.
+
+
+                if (password == "5555")
+                {
+                    StartCoroutine(MoveDoor());
+                }
+                else
+                {
+
+                }
             }
         }
+
         /// <summary>
         /// 取得介面物件
         /// </summary>
