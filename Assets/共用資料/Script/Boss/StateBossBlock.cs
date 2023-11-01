@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 namespace TwoD
@@ -9,7 +9,7 @@ namespace TwoD
         public StateBossCloseAttack closeAttack;
         public StateBossTrack bossTrack;
 
-        private string parBlock = "¶}Ãö®æ¾×";
+        private string parBlock = "é–‹é—œæ ¼æ“‹";
         private float rdt = 0;
         private HealthSystem healthSystem;
         private void Start()
@@ -18,12 +18,14 @@ namespace TwoD
         }
         public override State RunCurrentState()
         {
-            //print("®æ¾×ª¬ºA");
+            print("æ ¼æ“‹ç‹€æ…‹");
             ani.SetBool(parBlock, true);
-            ani.ResetTrigger("Ä²µo»´§ğÀ»");
-            ani.ResetTrigger("Ä²µo­«§ğÀ»");
-            ani.ResetTrigger("Ä²µoÄò¤O");
+            gameObject.GetComponent<StateBossCloseAttack>().enabled = false;
+            /*ani.ResetTrigger("è§¸ç™¼è¼•æ”»æ“Š");
+            ani.ResetTrigger("è§¸ç™¼é‡æ”»æ“Š");
+            ani.ResetTrigger("è§¸ç™¼çºŒåŠ›");*/
             healthSystem.invulnerable = true;
+            healthSystem.invulnerableCounter = 10;
             rdt = Random.Range(5, 16);
             StartCoroutine(BlockTime(rdt / 10));
             return closeAttack;
@@ -31,10 +33,12 @@ namespace TwoD
         IEnumerator BlockTime(float time)
         {
             yield return new WaitForSeconds(time);
+            gameObject.GetComponent<StateBossCloseAttack>() .enabled = true;
             ani.SetBool(parBlock, false);
             healthSystem.invulnerable = false;
+            healthSystem.invulnerableCounter = 0;
             closeAttack.canBlock = true;
-            print("µ²§ôµL¼Ä®É¶¡¡I");
+            print("çµæŸç„¡æ•µæ™‚é–“ï¼");
         }
     }
 }

@@ -30,6 +30,8 @@ namespace TwoD
         public float timer = 0;
         public bool canMove = true;
 
+        private Vector3 signVe = new Vector3(166.1f, 30f, 0f);
+
         private string parWalk = "開關走路";
         private string parRun = "開關跑步";
 
