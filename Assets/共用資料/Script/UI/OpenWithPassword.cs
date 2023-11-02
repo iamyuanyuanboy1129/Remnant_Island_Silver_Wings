@@ -41,8 +41,7 @@ namespace TwoD
         {
             if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
             {
-                //passwordFiel.
-
+                passwordFiel.gameObject.SetActive(true);
 
                 if (password == "5555")
                 {
