@@ -24,29 +24,48 @@ namespace TwoD
         private Vector3 originalPosition;
         private Vector3 targetPosition;
         private string password;
+        private bool isOpen = false;
 
+        /*
         private void Awake()
         {
             GetUIObject();
         }
+        */
 
         private void Start()
         {
             originalPosition = door.transform.position;
             targetPosition = originalPosition + Vector3.up * offset;
+
+            //GetUIObject();
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
+
+            if (Input.GetKeyDown(KeyCode.F) && canTurnOn && isOpen == false)
             {
                 passwordFiel.gameObject.SetActive(true);
+                isOpen = true;
             }
+            else if (Input.GetKeyDown(KeyCode.F) && isOpen == true)
+            {
+                passwordFiel.gameObject.SetActive(false);
+                StartCoroutine(CloseUI());
+            }
+
+
             GetInputFieldData();
+
             if (password == "5555")
             {
                 StartCoroutine(MoveDoor());
             }
+
+
+
+            //ExitUI();
         }
 
         /// <summary>
@@ -61,7 +80,9 @@ namespace TwoD
         /// </summary>
         private void GetInputFieldData()
         {
+            print("123456789");
             passwordFiel.onEndEdit.AddListener((input) => password = input);
+            print(password);
         }
 
         private IEnumerator MoveDoor()
@@ -73,6 +94,15 @@ namespace TwoD
                 timer += Time.deltaTime;
                 yield return null;
             }
+        }
+        /// <summary>
+        /// 關掉頁面等待時間
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator CloseUI()
+        {
+            yield return new WaitForSeconds(0.5f);
+            isOpen = false;
         }
 
         private void OnTriggerStay2D(Collider2D collision)
