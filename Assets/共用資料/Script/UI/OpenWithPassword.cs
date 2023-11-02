@@ -28,7 +28,6 @@ namespace TwoD
         private void Awake()
         {
             GetUIObject();
-            GetInputFieldData();
         }
 
         private void Start()
@@ -42,15 +41,11 @@ namespace TwoD
             if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
             {
                 passwordFiel.gameObject.SetActive(true);
-
-                if (password == "5555")
-                {
-                    StartCoroutine(MoveDoor());
-                }
-                else
-                {
-
-                }
+            }
+            GetInputFieldData();
+            if (password == "5555")
+            {
+                StartCoroutine(MoveDoor());
             }
         }
 
