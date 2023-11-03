@@ -16,9 +16,9 @@ namespace TwoD
         [SerializeField, Header("要開啟的門")]
         private GameObject door;
         [SerializeField, Header("門移動的總時間"), Range(1f, 5f)]
-        private float duration = 3f;
+        private float duration = 1f;
         [SerializeField, Header("門的偏移量"), Range(-5f, 5f)]
-        private float offset = 2;
+        private float offset = 3;
 
         private bool canTurnOn = false;
         private Vector3 originalPosition;
@@ -26,19 +26,11 @@ namespace TwoD
         private string password;
         private bool isOpen = false;
 
-        /*
-        private void Awake()
-        {
-            GetUIObject();
-        }
-        */
-
         private void Start()
         {
             originalPosition = door.transform.position;
             targetPosition = originalPosition + Vector3.up * offset;
 
-            //GetUIObject();
         }
 
         private void Update()
@@ -61,20 +53,11 @@ namespace TwoD
             if (password == "5555")
             {
                 StartCoroutine(MoveDoor());
+                passwordFiel.gameObject.SetActive(false);
             }
 
-
-
-            //ExitUI();
         }
 
-        /// <summary>
-        /// 取得介面物件
-        /// </summary>
-        private void GetUIObject()
-        {
-            passwordFiel = GameObject.Find("輸入密碼欄位").GetComponent<TMP_InputField>();
-        }
         /// <summary>
         /// 取得輸入欄位資料
         /// </summary>
