@@ -8,6 +8,7 @@ namespace TwoD
     {
         public Vector3 pointOriginal;
         private AudioManager audioManager;
+        private bool isPlaying = false;
 
         [SerializeField, Header("Boss血條")]
         private GameObject bossHealthBar;
@@ -35,12 +36,17 @@ namespace TwoD
         }
         void Update()
         {
-            if(PlayerInRoom())
+            if (PlayerInRoom())
             {
                 print("玩家進入房間");
                 bossHealthBar.SetActive(true);
                 bossName.SetActive(true);
-                audioManager.PlaySFX(audioManager.BossBattle);
+                if (!isPlaying)
+                {
+                    isPlaying = true;
+                    audioManager.StopBG();
+                    audioManager.PlaySFX(audioManager.BossBattle);
+                }
             }
             else
             {
