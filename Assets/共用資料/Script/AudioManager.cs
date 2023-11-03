@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip correct;
     public AudioClip mistake;
     public AudioClip openChest;
+    public AudioClip BossBattle;
 
     private void Start()
     {
