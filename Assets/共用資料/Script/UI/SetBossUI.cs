@@ -7,6 +7,7 @@ namespace TwoD
     public class SetBossUI : MonoBehaviour
     {
         public Vector3 pointOriginal;
+        private AudioManager audioManager;
 
         [SerializeField, Header("Boss血條")]
         private GameObject bossHealthBar;
@@ -28,6 +29,10 @@ namespace TwoD
             Gizmos.DrawCube(pointOriginal + transform.TransformDirection(roomOffset), roomSize);
         }
 
+        private void Awake()
+        {
+            audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        }
         void Update()
         {
             if(PlayerInRoom())
@@ -35,6 +40,7 @@ namespace TwoD
                 print("玩家進入房間");
                 bossHealthBar.SetActive(true);
                 bossName.SetActive(true);
+                audioManager.PlaySFX(audioManager.BossBattle);
             }
             else
             {
