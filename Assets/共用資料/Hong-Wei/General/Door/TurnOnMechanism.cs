@@ -12,6 +12,7 @@ public class TurnOnMechanism : MonoBehaviour
     private float offset = 2;
 
     private bool canTurnOn = false;
+    private bool usedagain = false;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
 
@@ -23,9 +24,15 @@ public class TurnOnMechanism : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
+        if (Input.GetKeyDown(KeyCode.F) && canTurnOn && !usedagain)
         {
+            transform.eulerAngles = new Vector3(0, 180, 0);
             StartCoroutine(MoveDoor());
+            usedagain = true;
+        }
+        if (usedagain)
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
@@ -42,7 +49,7 @@ public class TurnOnMechanism : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !usedagain)
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             canTurnOn = true;
@@ -51,7 +58,7 @@ public class TurnOnMechanism : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !usedagain)
         {
             gameObject.transform.GetChild(0).gameObject.SetActive(false);
             canTurnOn = false;

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
 public class MechanismManager : MonoBehaviour
 {
     public List<int> mechanismsIndex= new List<int>();
@@ -36,7 +37,7 @@ public class MechanismManager : MonoBehaviour
     {
         if (mechanismsIndex.Count == 4)
         {
-            if (Enumerable.SequenceEqual(mechanismsIndex,code))
+            if (Enumerable.SequenceEqual(mechanismsIndex, code))
             {
                 Debug.Log("<color=red>密碼相符</color>");
                 audioManager.PlaySFX(audioManager.correct);
