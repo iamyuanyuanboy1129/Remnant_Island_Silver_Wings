@@ -25,6 +25,7 @@ namespace TwoD
         private Vector3 targetPosition;
         private string password;
         private bool isOpen = false;
+        private bool usedagain = false;
 
         private void Start()
         {
@@ -36,12 +37,12 @@ namespace TwoD
         private void Update()
         {
 
-            if (Input.GetKeyDown(KeyCode.F) && canTurnOn && isOpen == false)
+            if (Input.GetKeyDown(KeyCode.F) && canTurnOn && isOpen == false && !usedagain)
             {
                 passwordFiel.gameObject.SetActive(true);
                 isOpen = true;
             }
-            else if (Input.GetKeyDown(KeyCode.F) && isOpen == true)
+            else if (Input.GetKeyDown(KeyCode.F) && isOpen == true && !usedagain)
             {
                 passwordFiel.gameObject.SetActive(false);
                 StartCoroutine(CloseUI());
@@ -54,6 +55,8 @@ namespace TwoD
             {
                 StartCoroutine(MoveDoor());
                 passwordFiel.gameObject.SetActive(false);
+                gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                usedagain = true;
             }
 
         }
@@ -90,7 +93,7 @@ namespace TwoD
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") && !usedagain)
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(true);
                 canTurnOn = true;
@@ -99,7 +102,7 @@ namespace TwoD
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") && !usedagain)
             {
                 gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 canTurnOn = false;
