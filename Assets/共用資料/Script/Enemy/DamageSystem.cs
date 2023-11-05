@@ -10,6 +10,7 @@ namespace TwoD
         public float attackRange;
         public float attackRate;
 
+
         void Start()
         {
         
