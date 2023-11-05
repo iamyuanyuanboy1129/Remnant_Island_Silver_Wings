@@ -23,6 +23,7 @@ namespace TwoD
         private Rigidbody2D rig;
         private Transform player;
         private GameObject gameObject;
+        
 
         private CinemachineImpulseSource impulseSource;
 
@@ -35,6 +36,7 @@ namespace TwoD
             player = GameObject.Find("Player_Idle").transform;
             gameObject = GameObject.Find(this.name);
             impulseSource = FindObjectOfType<CinemachineImpulseSource>();
+            
         }
 
         private void Update()
@@ -74,6 +76,7 @@ namespace TwoD
                 rig.velocity = Vector3.zero;
                 //觸發死亡
                 OnDie?.Invoke();
+                
             }
 
             OnHealthChange?.Invoke(this);

@@ -15,7 +15,12 @@ public class TurnOnMechanism : MonoBehaviour
     private bool usedagain = false;
     private Vector3 originalPosition;
     private Vector3 targetPosition;
+    private AudioManager audioManager;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void Start()
     {
         originalPosition = door.transform.position;
@@ -28,6 +33,7 @@ public class TurnOnMechanism : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
             StartCoroutine(MoveDoor());
+            audioManager.PlaySFX(audioManager.mechineStart);
             usedagain = true;
         }
         if (usedagain)

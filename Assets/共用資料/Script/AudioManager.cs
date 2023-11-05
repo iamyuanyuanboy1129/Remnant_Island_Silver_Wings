@@ -17,6 +17,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip mistake;
     public AudioClip openChest;
     public AudioClip BossBattle;
+    public AudioClip mechineStart;
+    public AudioClip jump;
+    public AudioClip buttonStart;
+    public AudioClip damage;
+    public AudioClip death;
 
     private void Start()
     {

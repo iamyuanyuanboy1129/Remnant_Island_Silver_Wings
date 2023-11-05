@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
 
     private Rigidbody2D rig;
     private Animator ani;
+    private AudioManager audioManager;
     private string parRun = "isRun";
     private string parJump = "isJump";
 
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour
         //print("<color=yellow>喚醒事件</color>")
         rig = GetComponent<Rigidbody2D>();
         ani = GetComponent<Animator>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
     }
 
@@ -173,6 +175,7 @@ public class Player : MonoBehaviour
             rig.velocity = new Vector2(rig.velocity.x, jumpPower);
             isJumping = true;
             jumpCounter = 0;
+            audioManager.PlaySFX(audioManager.jump);
         }
 
         if (rig.velocity.y > 0 && isJumping)
