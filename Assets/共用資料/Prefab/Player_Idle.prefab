@@ -158,7 +158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6726352108097313342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.184, z: 0}
+  m_LocalPosition: {x: 0.74, y: 0.054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -184,8 +184,8 @@ GameObject:
   - component: {fileID: 7823547081975494166}
   - component: {fileID: 3676074023361421766}
   - component: {fileID: 1604277025563215198}
-  - component: {fileID: 3956663661659337154}
   - component: {fileID: 4223026637751118145}
+  - component: {fileID: 6729543452558707968}
   m_Layer: 7
   m_Name: Player_Idle
   m_TagString: Player
@@ -208,7 +208,7 @@ Transform:
   - {fileID: 3281794114320660040}
   - {fileID: 2951268187096445692}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &116286784762947623
 SpriteRenderer:
@@ -307,7 +307,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!70 &8396355578233502525
@@ -363,7 +363,10 @@ MonoBehaviour:
   layerCheckGround:
     serializedVersion: 2
     m_Bits: 64
-  jumpPower: 400
+  jumpPower: 8
+  fallMultiplier: 1
+  jumpMultiplier: 1
+  jumpTime: 0.1
   movementEnable: 1
   canHide: 0
   dodgeSpeed: 2000
@@ -519,18 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90a70fbeaefc8d479d2244768465407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3956663661659337154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8200820632634565129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d658c254b316d94ea5be635be655615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4223026637751118145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +535,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: 8396355578233502525}
+--- !u!114 &6729543452558707968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8200820632634565129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b965f5329032f14c80ebae66b7288fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireDamage: 100
 --- !u!1 &8364178286193041143
 GameObject:
   m_ObjectHideFlags: 0
