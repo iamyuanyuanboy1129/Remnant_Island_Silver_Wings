@@ -30,6 +30,9 @@ namespace TwoD
         private Animator ani;
         private AudioManager audioManager;
 
+        public InventoryManager inventoryManager;
+        public Inventory myBag;
+
         private string parHolyFire = "觸發衝擊波";
         private string parNormalFire = "觸發普通攻擊";
         public bool isAttack = false;
@@ -41,18 +44,23 @@ namespace TwoD
         {
             audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
             ani = GetComponent<Animator>();
+            
+        }
+
+        private void Start()
+        {
             if (SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)")
             {
                 this.GetComponent<SetGodSwordCount>().SetToZero();
                 holyCount = PlayerPrefs.GetInt("GodSword");
             }
-            else
+            else/* if (HasGodSword())*/
             {
+                print("default");
                 this.GetComponent<SetGodSwordCount>().SetToTwo();
                 holyCount = PlayerPrefs.GetInt("GodSword");
             }
         }
-
         private void Update()
         {
             HolyFire();
@@ -123,6 +131,22 @@ namespace TwoD
         {
             yield return new WaitForSeconds(firstAttackTime);
             GetComponentInChildren<DamageSystem>().damage -= 100;
+        }
+
+        private bool HasGodSword()
+        {
+            bool hasHoly = false;
+            for (int i = 0; i < myBag.itemList.Count; i++)
+            {
+                if (myBag.itemList[i].itemName == "HolySword")
+                {
+                    print("有劍！");
+                    hasHoly = true;
+                    break;
+                }
+            }
+            print("沒劍！");
+            return hasHoly;
         }
     }
 }

@@ -30,10 +30,10 @@ public class ItemOnWorld : MonoBehaviour
                 }
             }
         }
-        else
+        /*else
         {
             thisItem.itemHold++;
-        }
+        }*/
 
         InventoryManager.RefreshItem();
     }

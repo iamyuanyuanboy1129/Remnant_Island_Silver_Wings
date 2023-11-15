@@ -127,6 +127,22 @@ public class InventoryManager : MonoBehaviour
         return hasKey;
     }
 
+    public static bool HasHolySword()
+    {
+        bool hasHoly = false;
+        for (int i = 0; i < instance.myBag.itemList.Count; i++)
+        {
+            if (instance.myBag.itemList[i].itemName == "HolySword")
+            {
+                print("有劍！");
+                hasHoly = true;
+                break;
+            }
+        }
+        print("沒劍！");
+        return hasHoly;
+    }
+
     public static void UseItem(string useItemName)
     {
         switch (useItemName)
