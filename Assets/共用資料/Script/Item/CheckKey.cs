@@ -6,17 +6,15 @@ using UnityEngine.InputSystem;
 
 public class CheckKey : MonoBehaviour
 {
-    private GameObject checkKeyDialog;
-    void Start()
-    {
-        checkKeyDialog = GameObject.Find("KeyCheck");
-    }
+    public BoxCollider2D dialogCollider;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.transform.name);
         if (collision.gameObject.CompareTag("Player") && !InventoryManager.HasKey())
         {
-            checkKeyDialog.GetComponent<BoxCollider2D>().enabled = true;
+            dialogCollider.enabled = true;
         }
     }
 }

@@ -118,10 +118,13 @@ public class InventoryManager : MonoBehaviour
         bool hasKey = false;
         for (int i = 0; i < instance.myBag.itemList.Count; i++)
         {
-            if (instance.myBag.itemList[i].itemName == "Key")
+            if (instance.myBag.itemList[i] != null)
             {
-                hasKey = true;
-                break;
+                if (instance.myBag.itemList[i].itemName == "Key")
+                {
+                    hasKey = true;
+                    break;
+                }
             }
         }
         return hasKey;
@@ -132,14 +135,15 @@ public class InventoryManager : MonoBehaviour
         bool hasHoly = false;
         for (int i = 0; i < instance.myBag.itemList.Count; i++)
         {
-            if (instance.myBag.itemList[i].itemName == "阿瑞斯之劍")
+            if (instance.myBag.itemList[i] != null)
             {
-                print("有劍！");
-                hasHoly = true;
-                break;
+                if (instance.myBag.itemList[i].itemName == "阿瑞斯之劍")
+                {
+                    hasHoly = true;
+                    break;
+                }
             }
         }
-        print("沒劍！");
         return hasHoly;
     }
 
