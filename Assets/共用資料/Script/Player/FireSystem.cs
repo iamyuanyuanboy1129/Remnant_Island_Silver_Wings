@@ -44,22 +44,13 @@ namespace TwoD
         {
             audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
             ani = GetComponent<Animator>();
-            
+
         }
 
         private void Start()
         {
-            if (SceneManager.GetActiveScene().name == "遊戲畫面(新手教學)")
-            {
-                this.GetComponent<SetGodSwordCount>().SetToZero();
-                holyCount = PlayerPrefs.GetInt("GodSword");
-            }
-            else/* if (HasGodSword())*/
-            {
-                print("default");
-                this.GetComponent<SetGodSwordCount>().SetToTwo();
-                holyCount = PlayerPrefs.GetInt("GodSword");
-            }
+            this.GetComponent<SetGodSwordCount>().SetToTwo();
+            holyCount = PlayerPrefs.GetInt("GodSword");
         }
         private void Update()
         {
