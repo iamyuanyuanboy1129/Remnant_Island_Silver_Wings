@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip background;
     public AudioClip buttonClick;
     public AudioClip attackSound;
+    public AudioClip holyAttackSound;
     public AudioClip correct;
     public AudioClip mistake;
     public AudioClip openChest;

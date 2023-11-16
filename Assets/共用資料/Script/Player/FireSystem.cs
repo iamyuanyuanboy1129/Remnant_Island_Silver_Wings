@@ -75,7 +75,7 @@ namespace TwoD
         IEnumerator Waiting()
         {
             yield return new WaitForSeconds(waitingSec);
-
+            audioManager.PlaySFX(audioManager.holyAttackSound);
             GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
             tempBullet.GetComponent<Rigidbody2D>().AddForce(transform.right * powerBullet);
             canHolyFire = true;
@@ -122,22 +122,6 @@ namespace TwoD
         {
             yield return new WaitForSeconds(firstAttackTime);
             GetComponentInChildren<DamageSystem>().damage -= 100;
-        }
-
-        private bool HasGodSword()
-        {
-            bool hasHoly = false;
-            for (int i = 0; i < myBag.itemList.Count; i++)
-            {
-                if (myBag.itemList[i].itemName == "HolySword")
-                {
-                    print("有劍！");
-                    hasHoly = true;
-                    break;
-                }
-            }
-            print("沒劍！");
-            return hasHoly;
         }
     }
 }
