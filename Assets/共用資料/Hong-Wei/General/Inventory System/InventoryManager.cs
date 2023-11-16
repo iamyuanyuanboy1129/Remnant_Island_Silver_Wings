@@ -132,7 +132,7 @@ public class InventoryManager : MonoBehaviour
         bool hasHoly = false;
         for (int i = 0; i < instance.myBag.itemList.Count; i++)
         {
-            if (instance.myBag.itemList[i].itemName == "HolySword")
+            if (instance.myBag.itemList[i].itemName == "阿瑞斯之劍")
             {
                 print("有劍！");
                 hasHoly = true;

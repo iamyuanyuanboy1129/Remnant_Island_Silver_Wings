@@ -71,7 +71,7 @@ namespace TwoD
         /// </summary>
         public void HolyFire()
         {
-            if (Input.GetKeyDown(KeyCode.C) && canHolyFire && holyCount > 0)
+            if (Input.GetKeyDown(KeyCode.C) && canHolyFire && holyCount > 0 && InventoryManager.HasHolySword())
             {
                 holyCount--;
                 canHolyFire = false;
