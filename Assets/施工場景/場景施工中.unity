@@ -183,8 +183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5C45\u7136\u628A\u738B\u6253\u6B7B\u4E86\uFF0C\u771F\u53B2\u5BB3\uFF01\n\u611F\u8B1D\u904A\u73A9\uFF01"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6296b19a412b3dc45970f5e8be29c473, type: 2}
-  m_sharedMaterial: {fileID: 6361080764776378457, guid: 6296b19a412b3dc45970f5e8be29c473, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e8a2eb5a4e4fee04bb92668c7f6f7311, type: 2}
+  m_sharedMaterial: {fileID: -7126093330438241076, guid: e8a2eb5a4e4fee04bb92668c7f6f7311, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
