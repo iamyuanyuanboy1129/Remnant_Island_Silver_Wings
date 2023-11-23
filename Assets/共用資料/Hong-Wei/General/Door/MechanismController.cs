@@ -10,12 +10,15 @@ public class MechanismController : MonoBehaviour
     private MechanismManager mecha;
     private BoxCollider2D box;
 
+    private Animator ani;
+
     private bool canTurnOn = false;
 
     private void Start()
     {
         mecha=GetComponentInParent<MechanismManager>();
         box = GetComponent<BoxCollider2D>();
+        ani = GetComponent<Animator>();
     }
 
     private void Update()
@@ -23,6 +26,7 @@ public class MechanismController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && canTurnOn)
         {
             mecha.mechanismsIndex.Add(number);
+            ani.SetTrigger("Trigger");
             box.enabled = false;
         }
     }
