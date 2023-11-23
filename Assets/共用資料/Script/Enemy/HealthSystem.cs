@@ -15,6 +15,9 @@ namespace TwoD
         public float invulnerableCounter;
         public bool invulnerable;
 
+        [SerializeField, Header("擊中特效")]
+        private GameObject ref_FX;
+
         public UnityEvent<HealthSystem> OnHealthChange;
 
         public UnityEvent<Transform> OnTakeDamage;
@@ -27,7 +30,7 @@ namespace TwoD
         private AudioManager audioManager;
         
 
-        private CinemachineImpulseSource impulseSource;
+        //private CinemachineImpulseSource impulseSource;
 
         private void Start()
         {
@@ -37,7 +40,7 @@ namespace TwoD
             rig = GetComponent<Rigidbody2D>();
             player = GameObject.Find("Player_Idle").transform;
             gameObject = GameObject.Find(this.name);
-            impulseSource = FindObjectOfType<CinemachineImpulseSource>();
+            //impulseSource = FindObjectOfType<CinemachineImpulseSource>();
 
             audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         }
@@ -65,7 +68,8 @@ namespace TwoD
                 currentHealth -= attacker.damage;
                 if (!gameObject.CompareTag("Player"))
                 {
-                    impulseSource.GenerateImpulse();
+
+                    //impulseSource.GenerateImpulse();
                 }
                 if (gameObject.CompareTag("Player"))
                 {
