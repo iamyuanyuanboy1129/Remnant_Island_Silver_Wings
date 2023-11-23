@@ -118,15 +118,16 @@ public class InventoryManager : MonoBehaviour
         if (instance.myBag.itemList[20] != null)
         {
             instance.myBag.itemList[20].equip = false;
-            instance.myBag.itemList[20].itemImage = null;
+            instance.slots[20].GetComponent<Slot>().slotImage = null;
             instance.myBag.itemList[20] = null;
         }
         if (instance.myBag.itemList[21] != null)
         {
             instance.myBag.itemList[21].equip = false;
-            instance.myBag.itemList[20].itemImage = null;
+            instance.slots[21].GetComponent<Slot>().slotImage = null;
             instance.myBag.itemList[21] = null;
         }
+        RefreshItem();
     }
 
     public static bool HasKey()
