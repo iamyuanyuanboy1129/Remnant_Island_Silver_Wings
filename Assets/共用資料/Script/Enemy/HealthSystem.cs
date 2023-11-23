@@ -23,6 +23,8 @@ namespace TwoD
         private Rigidbody2D rig;
         private Transform player;
         private GameObject gameObject;
+
+        private AudioManager audioManager;
         
 
         private CinemachineImpulseSource impulseSource;
@@ -36,7 +38,8 @@ namespace TwoD
             player = GameObject.Find("Player_Idle").transform;
             gameObject = GameObject.Find(this.name);
             impulseSource = FindObjectOfType<CinemachineImpulseSource>();
-            
+
+            audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         }
 
         private void Update()
@@ -64,6 +67,10 @@ namespace TwoD
                 {
                     impulseSource.GenerateImpulse();
                 }
+                if (gameObject.CompareTag("Player"))
+                {
+                    audioManager.PlaySFX(audioManager.damage);
+                }
                 TriggerInvulnerable();
                 //執行受傷
                 OnTakeDamage?.Invoke(attacker.transform);
@@ -74,6 +81,11 @@ namespace TwoD
             {
                 currentHealth = 0;
                 rig.velocity = Vector3.zero;
+                if (gameObject.CompareTag("Player"))
+                {
+                    audioManager.PlaySFX(audioManager.death);
+                    TriggerInvulnerable();
+                }
                 //觸發死亡
                 OnDie?.Invoke();
                 

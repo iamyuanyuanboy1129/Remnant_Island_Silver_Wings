@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7231835553785362831, guid: 070f9f90422691b4e874b5383764212c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c3f21edf6149dfc44bf8349e1e41746d, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -160,7 +160,7 @@ Transform:
   - {fileID: 521107610247262255}
   - {fileID: 7160179140485174498}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1108026428829937488
 MonoBehaviour:
@@ -176,8 +176,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 6650981351871219802}
   SFXSource: {fileID: 2858099389696020896}
-  background: {fileID: 8300000, guid: c3f21edf6149dfc44bf8349e1e41746d, type: 3}
+  background: {fileID: 8300000, guid: e5e9d910e86a2ea4886e77d6bffa7d1b, type: 3}
   buttonClick: {fileID: 8300000, guid: 7f0ea62eeb6943540b6a2776a95a3701, type: 3}
+  attackSound: {fileID: 8300000, guid: 6a932c76ad364e842b18d565faac813f, type: 3}
+  holyAttackSound: {fileID: 8300000, guid: 8c30db7f37cc5ae4282a9a4f894bf3fb, type: 3}
+  correct: {fileID: 8300000, guid: 1c68d7fcbda8db94994236b6d5305028, type: 3}
+  mistake: {fileID: 8300000, guid: 61e4742272cf25a44b4055c44b6c3798, type: 3}
+  openChest: {fileID: 8300000, guid: 60d879f9d3a9ede43ab40d00e6121904, type: 3}
+  BossBattle: {fileID: 8300000, guid: 8b7dfe3b61677ff42aa5ab5cfc0c53b0, type: 3}
+  mechineStart: {fileID: 8300000, guid: 0cf34a8168193dc4d84feec3a5da897c, type: 3}
+  jump: {fileID: 8300000, guid: 2c8be9f81cbd27248a020cb0bfdb5714, type: 3}
+  buttonStart: {fileID: 8300000, guid: 30ef4bbb70eab7b4e80ff42584755fb9, type: 3}
+  damage: {fileID: 8300000, guid: c55a27cbe6c001247bca64352fb5d80c, type: 3}
+  death: {fileID: 8300000, guid: 0343ace2f9e080f41a99edda5b1291cf, type: 3}
 --- !u!1 &7947074483418625243
 GameObject:
   m_ObjectHideFlags: 0
