@@ -68,7 +68,8 @@ namespace TwoD
                 currentHealth -= attacker.damage;
                 if (!gameObject.CompareTag("Player"))
                 {
-
+                    GameObject tempFX = Instantiate(ref_FX, transform.position, Quaternion.identity);
+                    tempFX.AddComponent<ParticileEffectController>();
                     //impulseSource.GenerateImpulse();
                 }
                 if (gameObject.CompareTag("Player"))

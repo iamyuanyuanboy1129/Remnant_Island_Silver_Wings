@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 760141395}
+  selectedFlowchart: {fileID: 1375015573}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -43553,14 +43553,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1910378651}
     m_Modifications:
-    - target: {fileID: 75766240617677911, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1282042199664342720, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 86bfd58ac9560904cb7f5e31ad10edad, type: 3}
     - target: {fileID: 6859948187499587401, guid: 399b8d5104806e04aaa940e7cf6f4e33, type: 3}
       propertyPath: m_Name
       value: Enemy_Idle
