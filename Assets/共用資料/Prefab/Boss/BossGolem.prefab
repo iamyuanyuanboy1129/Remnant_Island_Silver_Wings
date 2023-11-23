@@ -299,6 +299,7 @@ MonoBehaviour:
   invulnerableDuration: 0.1
   invulnerableCounter: 0
   invulnerable: 0
+  ref_FX: {fileID: 2852447119767520771, guid: bee0537e6d76fad44931283bc1dc28a3, type: 3}
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -394,6 +395,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   atkCDTime: 1.5
+  canBlock: 1
+  isAttack: 0
   bossTrack: {fileID: 1223665941574618822}
   bossBlock: {fileID: 2101389491482547109}
 --- !u!114 &8636116226671730176
@@ -430,6 +433,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   closeAttack: {fileID: 5124224322289519680}
+  bossTrack: {fileID: 0}
 --- !u!1 &5229880146906855332
 GameObject:
   m_ObjectHideFlags: 0

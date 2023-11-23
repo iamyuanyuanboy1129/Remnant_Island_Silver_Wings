@@ -43,7 +43,7 @@ Transform:
   m_Children:
   - {fileID: 6670653530939334300}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3468403633734969244
 SpriteRenderer:
@@ -336,6 +336,7 @@ MonoBehaviour:
   timeSendAttackCheck: 0.8
   timeAttackEnd: 1.7
   stateTrack: {fileID: 921554610265946678}
+  aniSpeed: 1.5
 --- !u!114 &7262940202789201709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +354,7 @@ MonoBehaviour:
   invulnerableDuration: 0.3
   invulnerableCounter: 0
   invulnerable: 0
+  ref_FX: {fileID: 2852447119767520771, guid: bee0537e6d76fad44931283bc1dc28a3, type: 3}
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []

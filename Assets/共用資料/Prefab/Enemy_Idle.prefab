@@ -129,14 +129,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6859948187499587401}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.3195034, y: -1.5068442, z: 0.054100238}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4643703600472048430}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1282042199664342720
 SpriteRenderer:
@@ -429,6 +429,7 @@ MonoBehaviour:
   timeSendAttackCheck: 0.8
   timeAttackEnd: 1.7
   stateTrack: {fileID: 5127590848898710373}
+  aniSpeed: 1.5
 --- !u!114 &1441275338908132268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +447,7 @@ MonoBehaviour:
   invulnerableDuration: 0.3
   invulnerableCounter: 0
   invulnerable: 0
+  ref_FX: {fileID: 2852447119767520771, guid: bee0537e6d76fad44931283bc1dc28a3, type: 3}
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
