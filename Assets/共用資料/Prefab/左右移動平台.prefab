@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 5.73, y: 0, z: 0}
-  originalPosition: {x: 4.83, y: 0.42199147, z: 0}
+  originalPosition: {x: 21.88, y: 30.91, z: 0}
   duration: 3
   delayTime: 0.2
 --- !u!61 &3893579100617858857
