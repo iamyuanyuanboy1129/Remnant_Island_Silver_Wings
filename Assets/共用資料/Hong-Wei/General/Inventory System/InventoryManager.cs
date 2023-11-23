@@ -113,6 +113,22 @@ public class InventoryManager : MonoBehaviour
         RefreshItem();
     }
 
+    public static void RemoveEquipItem()
+    {
+        if (instance.myBag.itemList[20] != null)
+        {
+            instance.myBag.itemList[20].equip = false;
+            instance.myBag.itemList[20].itemImage = null;
+            instance.myBag.itemList[20] = null;
+        }
+        if (instance.myBag.itemList[21] != null)
+        {
+            instance.myBag.itemList[21].equip = false;
+            instance.myBag.itemList[20].itemImage = null;
+            instance.myBag.itemList[21] = null;
+        }
+    }
+
     public static bool HasKey()
     {
         bool hasKey = false;
@@ -137,7 +153,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (instance.myBag.itemList[i] != null)
             {
-                if (instance.myBag.itemList[i].itemName == "阿瑞斯之劍")
+                if (instance.myBag.itemList[i].itemName == "阿瑞斯之劍" && instance.myBag.itemList[i].equip == true)
                 {
                     hasHoly = true;
                     break;
@@ -154,7 +170,7 @@ public class InventoryManager : MonoBehaviour
             case "高級回復藥":
                 for (int i = 0; i < instance.myBag.itemList.Count; i++)
                 {
-                    if (instance.myBag.itemList[i].itemName == "高級回復藥" && instance.myBag.itemList[i].itemHold != 0)
+                    if (instance.myBag.itemList[i].itemName == "高級回復藥" && instance.myBag.itemList[i].itemHold != 0 && instance.myBag.itemList[i].equip == true)
                     {
                         HealthSystem healthSystem;
                         healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();

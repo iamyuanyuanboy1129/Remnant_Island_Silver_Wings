@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,8 @@ public class Item : ScriptableObject
     public int itemHold;
     [TextArea]
     public string itemInfo;
+
+    public string itemType;
 
     public bool equip;
 }
