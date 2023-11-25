@@ -86,6 +86,11 @@ namespace TwoD
             {
                 currentHealth = 0;
                 rig.velocity = Vector3.zero;
+                if (!gameObject.CompareTag("Player"))
+                {
+                    GameObject tempFX = Instantiate(ref_FX, transform.position, Quaternion.identity);
+                    tempFX.AddComponent<ParticileEffectController>();
+                }
                 if (gameObject.CompareTag("Player"))
                 {
                     audioManager.PlaySFX(audioManager.death);
