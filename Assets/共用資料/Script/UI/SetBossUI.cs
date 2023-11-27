@@ -38,7 +38,7 @@ namespace TwoD
         {
             if (PlayerInRoom())
             {
-                print("玩家進入房間");
+                //print("玩家進入房間");
                 bossHealthBar.SetActive(true);
                 bossName.SetActive(true);
                 if (!isPlaying)

@@ -66,9 +66,9 @@ namespace TwoD
         /// </summary>
         private void GetInputFieldData()
         {
-            print("123456789");
+            //print("123456789");
             passwordFiel.onEndEdit.AddListener((input) => password = input);
-            print(password);
+            //print(password);
         }
 
         private IEnumerator MoveDoor()
