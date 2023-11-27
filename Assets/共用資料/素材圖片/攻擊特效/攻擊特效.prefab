@@ -74,7 +74,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_RenderMode: 1
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -113,7 +113,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2852447119767520771}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 0.3
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 3
@@ -187,8 +187,8 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.5
+      minMaxState: 0
+      scalar: 0.2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -294,8 +294,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.99215686, b: 0.72156864, a: 1}
-      maxColor: {r: 0.99215686, g: 1, b: 0.5647059, a: 0.39215687}
+      minColor: {r: 1, g: 0.9945522, b: 0.8066038, a: 1}
+      maxColor: {r: 0.9965154, g: 1, b: 0.8066038, a: 0.39215687}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
