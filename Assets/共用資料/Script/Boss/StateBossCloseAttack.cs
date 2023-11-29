@@ -6,13 +6,15 @@ namespace TwoD
 
     public class StateBossCloseAttack : State
     {
-        [SerializeField, Header("攻擊時間間距")]
+        
         private float atkCDTime = 1.5f;
 
         private float atkType;
         private string parLitAtk = "觸發輕攻擊";
         private string parCharge = "觸發續力";
         private string parHardAtk = "觸發重攻擊";
+        private string parWalk = "開關走路";
+        private string parRun = "開關跑步";
         private float rdt = 0;
         private float timer = 0;
         private float blockChance = 0;
@@ -45,9 +47,11 @@ namespace TwoD
                 {
                     ani.SetTrigger(parLitAtk);
                     isAttack = true;
+                    atkCDTime = 1.3f;
                 }
                 else
                 {
+                    atkCDTime = 1.7f;
                     canBlock = false;
                     isAttack = true;
                     ani.SetTrigger(parCharge);
@@ -65,6 +69,7 @@ namespace TwoD
                 return bossTrack;
             }
             timer += Time.deltaTime;
+            print(timer);
             return this;
         }
         IEnumerator WaitRandomTime(float rt)

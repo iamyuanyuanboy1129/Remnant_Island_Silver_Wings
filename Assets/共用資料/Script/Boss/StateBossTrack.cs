@@ -95,6 +95,21 @@ namespace TwoD
             //print("追蹤狀態");
             if (TrackTarget())
             {
+                if ((healthSystem.currentHealth/healthSystem.maxHealth) > 0.5f && canMove)
+                {
+                    //print("tracking_WALK");
+                    ani.SetBool(parWalk, true);
+                    FlipToPlayer();
+                    rig.velocity = new Vector2(direction * walkSpeed, rig.velocity.y);
+                }
+                else if((healthSystem.currentHealth / healthSystem.maxHealth) <= 0.5f && canMove)
+                {
+                    //print("tracking_RUN");
+                    ani.SetBool(parWalk, false);
+                    ani.SetBool(parRun, true);
+                    FlipToPlayer();
+                    rig.velocity = new Vector2(direction * runSpeed, rig.velocity.y);
+                }
                 if (TriggerJumpAttack() && canJumpAtk)
                 {
                     timer = 0;
@@ -106,19 +121,10 @@ namespace TwoD
                 if (TriggerCloseAttack() && canCloseAtk)
                 {
                     canMove = false;
+                    ani.SetBool(parWalk, false);
+                    ani.SetBool(parRun, false);
+                    rig.velocity = Vector2.zero;
                     return closeAttack;
-                }
-                if ((healthSystem.currentHealth/healthSystem.maxHealth) > 0.5f && canMove)
-                {
-                    ani.SetBool(parWalk, true);
-                    FlipToPlayer();
-                    rig.velocity = new Vector2(direction * walkSpeed, rig.velocity.y);
-                }
-                else if((healthSystem.currentHealth / healthSystem.maxHealth) <= 0.5f && canMove)
-                {
-                    ani.SetBool(parRun, true);
-                    FlipToPlayer();
-                    rig.velocity = new Vector2(direction * runSpeed, rig.velocity.y);
                 }
             }
             return this;

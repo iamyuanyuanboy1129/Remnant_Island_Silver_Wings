@@ -20,10 +20,8 @@ namespace TwoD
         {
             print("格擋狀態");
             ani.SetBool(parBlock, true);
+            bossTrack.canMove = false;
             gameObject.GetComponent<StateBossCloseAttack>().enabled = false;
-            /*ani.ResetTrigger("觸發輕攻擊");
-            ani.ResetTrigger("觸發重攻擊");
-            ani.ResetTrigger("觸發續力");*/
             healthSystem.invulnerable = true;
             healthSystem.invulnerableCounter = 10;
             rdt = Random.Range(5, 16);
@@ -35,6 +33,7 @@ namespace TwoD
             yield return new WaitForSeconds(time);
             gameObject.GetComponent<StateBossCloseAttack>() .enabled = true;
             ani.SetBool(parBlock, false);
+            bossTrack.canMove = true;
             healthSystem.invulnerable = false;
             healthSystem.invulnerableCounter = 0;
             closeAttack.canBlock = true;
