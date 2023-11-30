@@ -121,8 +121,8 @@ namespace TwoD
                 if (TriggerCloseAttack() && canCloseAtk)
                 {
                     canMove = false;
-                    ani.SetBool(parWalk, false);
-                    ani.SetBool(parRun, false);
+                    /*ani.SetBool(parWalk, false);
+                    ani.SetBool(parRun, false);*/
                     rig.velocity = Vector2.zero;
                     return closeAttack;
                 }

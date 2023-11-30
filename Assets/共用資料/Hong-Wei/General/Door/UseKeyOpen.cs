@@ -26,7 +26,7 @@ public class UseKeyOpen : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && InventoryManager.HasKey())
         {
             StartCoroutine(MoveDoor(pointUp));
-            InventoryManager.RemoveItem(key);
+            //InventoryManager.RemoveItem(key);
             boxCol.enabled = false;
         }
     }
