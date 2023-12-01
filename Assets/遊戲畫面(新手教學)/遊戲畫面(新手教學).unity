@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61dddfdc5e0e44ca298d8f46f7f5a915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedFlowchart: {fileID: 1375015573}
+  selectedFlowchart: {fileID: 223851973}
 --- !u!4 &20703089
 Transform:
   m_ObjectHideFlags: 1
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   scrollPos: {x: -3.5, y: 76.5}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 200
+  blockViewHeight: 613
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -2441,8 +2441,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 223851974}
-  selectedCommands:
-  - {fileID: 223851983}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -15385,7 +15384,7 @@ MonoBehaviour:
   m_Follow: {fileID: 758890881}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4.5
+    OrthographicSize: 5.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -15457,7 +15456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ImpulseDefinition:
     m_ImpulseChannel: 1
-    m_ImpulseShape: 0
+    m_ImpulseShape: 2
     m_CustomImpulseShape:
       serializedVersion: 2
       m_Curve:
@@ -15500,7 +15499,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    m_ImpulseDuration: 0.1
+    m_ImpulseDuration: 0.2
     m_ImpulseType: 0
     m_DissipationRate: 0.25
     m_RawSignal: {fileID: 0}
@@ -15529,9 +15528,9 @@ MonoBehaviour:
     m_ImpactRadius: 100
     m_DirectionMode: 0
     m_DissipationMode: 2
-    m_DissipationDistance: 10000
+    m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 1, y: -0.5, z: 0}
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!114 &500257355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15750,7 +15749,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -15774,7 +15773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528189270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.74, y: -0.19000006, z: -10}
+  m_LocalPosition: {x: -12.2274685, y: -0.19000053, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17666,6 +17665,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709369441}
   m_CullTransparentMesh: 1
+--- !u!114 &717944606 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1108026428829937488, guid: 450a11adf472d0c4785fa5baab37eb4b, type: 3}
+  m_PrefabInstance: {fileID: 2076895250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea4f877237ac8845879a8b41c3253bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &722885348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7794912045165657991, guid: 43c36226345b3e542b912ffd7dad848f, type: 3}
@@ -25854,6 +25864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSceneName: "\u7687\u5BAE"
+  aud: {fileID: 717944606}
 --- !u!114 &1174356385 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1203637299806570352, guid: 9b5bee28eae278d4286ccdea5effa707, type: 3}
